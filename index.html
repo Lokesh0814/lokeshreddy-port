@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lokesh Reddy Thipparthi | Data & AI Engineer</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- ===== LOADING SCREEN ===== -->
   <div id="loader">
-    <div class="spinner"></div>
-    <h2>Loading...</h2>
+    <h2 id="loading-text">Loading</h2>
   </div>
 
   <!-- ===== NAVBAR ===== -->
@@ -34,13 +33,7 @@
     <div class="hero-text">
       <h1>Hi, I'm <span class="highlight">Lokesh Reddy Thipparthi</span></h1>
       <h2 id="typed-text"></h2>
-      <p>
-        I am a Data & AI Engineer with strong experience in developing analytical and predictive modeling solutions
-        that transform complex datasets into actionable intelligence. My expertise spans Python, PySpark, SQL,
-        Databricks, and Azure, enabling scalable machine learning pipelines and cloud-based analytics. I am deeply
-        passionate about leveraging statistical and generative AI techniques to solve real-world business and product
-        challenges — delivering data-driven insights that improve performance, reliability, and customer outcomes.
-      </p>
+      <p>I am a Data & AI Engineer with strong experience in developing analytical and predictive modeling solutions that transform complex datasets into actionable intelligence. My expertise spans Python, PySpark, SQL, Databricks, and Azure, enabling scalable machine learning pipelines and cloud-based analytics. I am deeply passionate about leveraging statistical and generative AI techniques to solve real-world business and product challenges — delivering data-driven insights that improve performance, reliability, and customer outcomes.</p>
       <div class="buttons">
         <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" target="_blank" class="btn">View Resume</a>
         <a href="#contact" class="btn-outline">Contact Me</a>
@@ -49,16 +42,16 @@
     <div class="hero-img">
       <img src="assets/images/profile.jpg" alt="Lokesh Reddy">
     </div>
+    <div class="scroll-down" onclick="scrollToSection('about')">↓ Scroll Down</div>
   </section>
 
   <!-- ===== ABOUT ===== -->
   <section id="about" class="section about">
     <h2>About Me</h2>
     <p>
-      Experienced Data & AI Engineer passionate about building scalable analytical systems and ML solutions. 
-      Skilled in Python, SQL, Databricks, Azure, and cloud architecture, delivering data-driven insights that 
-      enhance business value.
+      I’m a Data & AI Engineer passionate about designing intelligent systems that blend analytics, machine learning, and scalable cloud architecture. With experience in building ML-integrated APIs and automation pipelines, I focus on extracting insights that drive data-informed decisions across enterprise platforms. My strength lies in transforming raw data into impactful business intelligence through modern tools and frameworks.
     </p>
+    <div class="scroll-next" onclick="scrollToSection('skills')">↓</div>
   </section>
 
   <!-- ===== SKILLS ===== -->
@@ -66,14 +59,20 @@
     <h2>Skills</h2>
     <div class="skills-grid">
       <div class="skill-card">Python</div>
-      <div class="skill-card">SQL</div>
       <div class="skill-card">PySpark</div>
+      <div class="skill-card">SQL</div>
       <div class="skill-card">Databricks</div>
       <div class="skill-card">Azure</div>
-      <div class="skill-card">Machine Learning</div>
       <div class="skill-card">Power BI</div>
+      <div class="skill-card">Machine Learning</div>
+      <div class="skill-card">Deep Learning</div>
       <div class="skill-card">TensorFlow</div>
+      <div class="skill-card">Scikit-learn</div>
+      <div class="skill-card">Tableau</div>
+      <div class="skill-card">Docker</div>
+      <div class="skill-card">Git / CI-CD</div>
     </div>
+    <div class="scroll-next" onclick="scrollToSection('projects')">↓</div>
   </section>
 
   <!-- ===== PROJECTS ===== -->
@@ -82,13 +81,18 @@
     <div class="project-grid">
       <div class="project-card">
         <h3>Generative AI Copilot</h3>
-        <p>Integrated ML endpoints for intelligent prompt-based automation at Confiz (Microsoft Factory US).</p>
+        <p>Integrated ML endpoints to automate intelligent prompt-based workflows for Microsoft Factory US at Confiz, improving campaign insights and personalization.</p>
       </div>
       <div class="project-card">
         <h3>Data Enrichment Utility</h3>
-        <p>Developed data pipeline combining cookie + geo + census data for audience personalization use cases.</p>
+        <p>Built an end-to-end data pipeline that enriched cookie and geo-based data using U.S. Census sources to enhance audience targeting accuracy.</p>
+      </div>
+      <div class="project-card">
+        <h3>ML-Powered Audience Insights</h3>
+        <p>Developed predictive models in Databricks using PySpark to analyze engagement trends and optimize user segmentation for marketing teams.</p>
       </div>
     </div>
+    <div class="scroll-next" onclick="scrollToSection('journey')">↓</div>
   </section>
 
   <!-- ===== JOURNEY ===== -->
@@ -96,16 +100,23 @@
     <h2>My Journey</h2>
     <div class="timeline">
       <div class="timeline-item left">
-        <h3>Senior Data & AI Engineer</h3>
-        <p>Confiz (Microsoft Factory US) — 2025–Present</p>
-        <p>Designing ML-integrated APIs and scalable data systems using Azure and Databricks.</p>
+        <h3>Bachelor’s in Mechanical Engineering</h3>
+        <p>Completed B.Tech at BDL with hands-on projects on optimization and analysis of seamless rocket motor tubes and Milan 2T missile fins.</p>
       </div>
       <div class="timeline-item right">
-        <h3>Master’s in Information Systems</h3>
-        <p>Trine University — 2022–2024</p>
-        <p>Specialized in ML, Cloud, and Data Analytics.</p>
+        <h3>Software Engineer – Krithi Cubersoft</h3>
+        <p>Developed backend Java components, REST APIs, and data-driven modules integrating analytics into client systems.</p>
+      </div>
+      <div class="timeline-item left">
+        <h3>Master of Science in Information Sciences & Systems – Trine University</h3>
+        <p>Specialized in ML, data engineering, and cloud analytics. Designed pipelines using Python, PySpark, and Databricks on Azure. Delivered BI insights with Power BI and SQL for real-world enterprise data products.</p>
+      </div>
+      <div class="timeline-item right">
+        <h3>Data & AI Engineer – Confiz (Microsoft Factory US)</h3>
+        <p>Leading development of ML-integrated APIs and intelligent data solutions leveraging Databricks, Azure, and modern GenAI frameworks.</p>
       </div>
     </div>
+    <div class="scroll-next" onclick="scrollToSection('contact')">↓</div>
   </section>
 
   <!-- ===== CONTACT ===== -->
