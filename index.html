@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Lokesh Reddy Thipparthi | Data & AI Engineer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ===== LOADING SCREEN ===== -->
+  <!-- ===== LOADING (2s, three dots) ===== -->
   <div id="loader">
-    <h2 id="loading-text">Loading</h2>
+    <h2 id="loadingText">Loading</h2>
   </div>
 
   <!-- ===== NAVBAR ===== -->
   <header class="header">
-    <a href="#" class="logo" id="reloadLogo">LR</a>
+    <a href="#" class="logo" id="reloadLogo" aria-label="Reload">LR</a>
     <nav class="nav">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
@@ -28,171 +32,237 @@
     </nav>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section id="home" class="section hero">
-    <div class="hero-text">
-      <h1>Hi, I'm <span class="highlight">Lokesh Reddy Thipparthi</span></h1>
-      <h2 id="typed-text"></h2>
-      <p>I am a Data & AI Engineer with strong experience in developing analytical and predictive modeling solutions that transform complex datasets into actionable intelligence. My expertise spans Python, PySpark, SQL, Databricks, and Azure, enabling scalable machine learning pipelines and cloud-based analytics. I am deeply passionate about leveraging statistical and generative AI techniques to solve real-world business and product challenges — delivering data-driven insights that improve performance, reliability, and customer outcomes.</p>
-      <div class="buttons">
-        <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" target="_blank" class="btn">View Resume</a>
-        <a href="#contact" class="btn-outline">Contact Me</a>
+  <!-- ===== HERO (Slide 1 – Deep Blue) ===== -->
+  <section id="home" class="section hero section-dark">
+    <div class="inner hero-grid">
+      <div class="hero-text">
+        <h1>Hi, I’m <span class="accent">Lokesh Reddy Thipparthi</span></h1>
+        <h2 id="typedRole" class="typed"></h2>
+        <p class="lead">
+          I am a Data & AI Engineer with strong experience in developing analytical and predictive modeling solutions
+          that transform complex datasets into actionable intelligence. My expertise spans Python, PySpark, SQL,
+          Databricks, and Azure, enabling scalable machine learning pipelines and cloud-based analytics. I am deeply
+          passionate about leveraging statistical and generative AI techniques to solve real-world business and product
+          challenges — delivering data-driven insights that improve performance, reliability, and customer outcomes.
+        </p>
+        <div class="cta">
+          <a class="btn primary" target="_blank" href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf">View Resume</a>
+          <a class="btn ghost" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="assets/images/profile.jpg" alt="Lokesh Reddy Thipparthi" />
       </div>
     </div>
-    <div class="hero-img">
-      <img src="assets/images/profile.jpg" alt="Lokesh Reddy">
+    <button class="scroll-down center" onclick="scrollToSection('about')" aria-label="Scroll Down">↓</button>
+    <!-- wave bottom to white -->
+    <div class="wave wave-bottom wave-to-light" aria-hidden="true">
+      <!-- Dark to light wave -->
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
     </div>
-    <div class="scroll-down" onclick="scrollToSection('about')">↓ Scroll Down</div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
-  <!-- ===== ABOUT ===== -->
-<section id="about" class="section about">
-  <h2>About Me</h2>
-  <div class="about-container">
-    <div class="about-left">
-      <h3>Data & AI Engineer | Machine Learning | Cloud | GenAI</h3>
-      <p>
-        I’m a <strong>Data & AI Engineer</strong> with a strong foundation in designing 
-        analytical systems, machine learning pipelines, and AI-driven solutions that deliver 
-        measurable business impact. My work spans end-to-end data lifecycle — from ingestion 
-        and transformation to model deployment and visualization.
-      </p>
-      <p>
-        I specialize in <strong>Python, PySpark, SQL, Databricks, and Azure</strong>, 
-        with expertise in building ML pipelines, vector-based GenAI workflows, and data integration APIs.
-      </p>
-      <p>
-        I’m passionate about developing intelligent systems that bridge data science, 
-        software engineering, and cloud architecture — empowering businesses with actionable insights.
-      </p>
+  <!-- ===== ABOUT (Slide 2 – Mist) ===== -->
+  <section id="about" class="section section-light">
+    <!-- wave top from dark -->
+    <div class="wave wave-top wave-from-dark" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985,66.28c-77.67,17.39-161.22,12.89-242, -3.6C620.82,40.43,546,0,451,0S281.11,40.43,158,63.68C103.78,75.82,47.89,68.29,0,46.29V120H1200V0C1120,15.76,1055,50.89,985,66.28Z"></path></svg>
     </div>
 
-    <div class="about-right">
-      <h4>🧰 Tools & Platforms</h4>
-      <ul>
-        <li>Python | PySpark | SQL | TensorFlow | Scikit-learn</li>
-        <li>Databricks | Azure | Power BI | Tableau | Docker</li>
-        <li>Big Data (Hadoop, Spark) | MLOps | CI/CD (Azure DevOps)</li>
-      </ul>
+    <div class="inner about-grid">
+      <!-- Left: stats & certs -->
+      <div class="about-left card">
+        <div class="stats">
+          <div class="stat"><div class="big">3+ yrs</div><div class="sub">Experience</div></div>
+          <div class="stat"><div class="big">10+</div><div class="sub">Projects</div></div>
+          <div class="stat"><div class="big">3</div><div class="sub">Certifications</div></div>
+        </div>
 
-      <h4>🎓 Certifications</h4>
-      <ul>
-        <li>
-          <a href="https://credentials.databricks.com/968b4fda-d8e7-49f7-aa51-9f62e534b1a7#acc.vSJP1OBl" target="_blank">
-            Databricks Certified Generative AI Engineer Associate
-          </a>
-        </li>
-        <li>
-          <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=56601B73A00AA8E180B2DA9FC4DC3611772ACA4614C670385ED37A82E0699CC7" target="_blank">
-            Oracle Cloud Infrastructure – Generative AI Professional
-          </a>
-        </li>
-        <li>
-          <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=7BFDBD650F88017E81CF39E99E3F4009EA17C3B4B38F5F290FF719B743B71473" target="_blank">
-            Oracle Cloud Infrastructure – AI Foundations Associate
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="scroll-next" onclick="scrollToSection('skills')">↓</div>
-</section>
-
-
-  <!-- ===== SKILLS ===== -->
-  <section id="skills" class="section skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">Python</div>
-      <div class="skill-card">PySpark</div>
-      <div class="skill-card">SQL</div>
-      <div class="skill-card">Databricks</div>
-      <div class="skill-card">Azure</div>
-      <div class="skill-card">Power BI</div>
-      <div class="skill-card">Machine Learning</div>
-      <div class="skill-card">Deep Learning</div>
-      <div class="skill-card">TensorFlow</div>
-      <div class="skill-card">Scikit-learn</div>
-      <div class="skill-card">Tableau</div>
-      <div class="skill-card">Docker</div>
-      <div class="skill-card">Git / CI-CD</div>
-    </div>
-    <div class="scroll-next" onclick="scrollToSection('projects')">↓</div>
-  </section>
-
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="section projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Generative AI Copilot</h3>
-        <p>Integrated ML endpoints to automate intelligent prompt-based workflows for Microsoft Factory US at Confiz, improving campaign insights and personalization.</p>
+        <h4>Certifications</h4>
+        <ul class="list">
+          <li><a target="_blank" href="https://credentials.databricks.com/968b4fda-d8e7-49f7-aa51-9f62e534b1a7#acc.vSJP1OBl">Databricks Generative AI Engineer Associate</a></li>
+          <li><a target="_blank" href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=56601B73A00AA8E180B2DA9FC4DC3611772ACA4614C670385ED37A82E0699CC7">OCI – Generative AI Professional</a></li>
+          <li><a target="_blank" href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=7BFDBD650F88017E81CF39E99E3F4009EA17C3B4B38F5F290FF719B743B71473">OCI – AI Foundations Associate</a></li>
+        </ul>
       </div>
-      <div class="project-card">
-        <h3>Data Enrichment Utility</h3>
-        <p>Built an end-to-end data pipeline that enriched cookie and geo-based data using U.S. Census sources to enhance audience targeting accuracy.</p>
-      </div>
-      <div class="project-card">
-        <h3>ML-Powered Audience Insights</h3>
-        <p>Developed predictive models in Databricks using PySpark to analyze engagement trends and optimize user segmentation for marketing teams.</p>
+
+      <!-- Right: headline + two paragraphs -->
+      <div class="about-right card">
+        <p class="tagline">Turning data into <b>scalable</b>, <b>AI-driven</b> solutions.</p>
+        <h3>Searching for a Data & AI engineer who delivers end-to-end impact?</h3>
+        <p>
+          I design ML-integrated data systems across ingestion, transformation, model training, and deployment using
+          Python, PySpark, SQL, Databricks, and Azure. My work blends analytics, software craftsmanship, and cloud
+          architecture to solve real business problems.
+        </p>
+        <p>
+          At Confiz (Microsoft Factory US), I’ve built intelligent automation and analytics solutions. My master’s at
+          Trine University focused on applied ML, cloud analytics, and data engineering — with an emphasis on
+          reproducibility, BI outcomes, and enterprise readiness.
+        </p>
       </div>
     </div>
-    <div class="scroll-next" onclick="scrollToSection('journey')">↓</div>
+
+    <button class="scroll-down corner" onclick="scrollToSection('skills')" aria-label="Scroll Down">↓</button>
+
+    <!-- waves: bottom to dark -->
+    <div class="wave wave-bottom wave-to-dark" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
+    </div>
   </section>
 
-  <!-- ===== JOURNEY ===== -->
-  <!-- ===== JOURNEY ===== -->
-<section id="journey" class="section journey">
-  <h2>My Journey</h2>
-  <div class="timeline">
-
-    <!-- Data & AI Engineer -->
-    <div class="timeline-item right">
-      <h3>Data & AI Engineer – Confiz (Microsoft Factory US)</h3>
-      <p>Leading development of ML-integrated APIs and intelligent data solutions leveraging Databricks, Azure, and modern GenAI frameworks.</p>
+  <!-- ===== SKILLS (Slide 3 – Deep Blue) ===== -->
+  <section id="skills" class="section section-dark">
+    <!-- wave top from light -->
+    <div class="wave wave-top wave-from-light" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985,66.28c-77.67,17.39-161.22,12.89-242,-3.6C620.82,40.43,546,0,451,0S281.11,40.43,158,63.68C103.78,75.82,47.89,68.29,0,46.29V120H1200V0C1120,15.76,1055,50.89,985,66.28Z"></path></svg>
     </div>
 
-    <!-- Master's -->
-    <div class="timeline-item left">
-      <h3>Master of Science in Information Sciences & Systems – Trine University</h3>
-      <p>Specialized in ML, data engineering, and cloud analytics. Designed pipelines using Python, PySpark, and Databricks on Azure. Delivered BI insights with Power BI and SQL for real-world enterprise data products.</p>
+    <div class="inner">
+      <h2>Skills</h2>
+
+      <h4 class="group-title">Programming & ML</h4>
+      <div class="grid skills-grid">
+        <div class="skill">Python</div>
+        <div class="skill">PySpark</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Scikit-learn</div>
+        <div class="skill">TensorFlow</div>
+        <div class="skill">XGBoost</div>
+        <div class="skill">LightGBM</div>
+        <div class="skill">NLP</div>
+      </div>
+
+      <h4 class="group-title">Platforms & Tools</h4>
+      <div class="grid skills-grid">
+        <div class="skill">Databricks</div>
+        <div class="skill">Azure</div>
+        <div class="skill">Power BI</div>
+        <div class="skill">Tableau</div>
+        <div class="skill">Docker</div>
+        <div class="skill">Git / CI-CD</div>
+        <div class="skill">Kafka</div>
+        <div class="skill">Airflow</div>
+      </div>
     </div>
 
-    <!-- Krithi Cubersoft -->
-    <div class="timeline-item right">
-      <h3>Software Engineer – Krithi Cubersoft</h3>
-      <p>Developed backend Java components, REST APIs, and data-driven modules integrating analytics into client systems, improving performance and scalability.</p>
+    <button class="scroll-down corner" onclick="scrollToSection('projects')" aria-label="Scroll Down">↓</button>
+
+    <!-- wave bottom to light -->
+    <div class="wave wave-bottom wave-to-light" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
     </div>
-
-    <!-- B.Tech -->
-    <div class="timeline-item left">
-      <h3>Bachelor’s in Mechanical Engineering</h3>
-      <p>Completed B.Tech at BDL with research projects focused on optimization and analysis of seamless rocket motor tubes and Milan 2T missile fins.</p>
-    </div>
-
-  </div>
-  <div class="scroll-next" onclick="scrollToSection('contact')">↓</div>
-</section>
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section contact">
-    <h2>Contact</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <textarea placeholder="Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
   </section>
 
-  <!-- ===== SCROLL-UP BUTTON ===== -->
-  <button id="scrollToTopBtn">↑</button>
+  <!-- ===== PROJECTS (Slide 4 – Mist) ===== -->
+  <section id="projects" class="section section-light">
+    <!-- wave top from dark -->
+    <div class="wave wave-top wave-from-dark" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985,66.28c-77.67,17.39-161.22,12.89-242,-3.6C620.82,40.43,546,0,451,0S281.11,40.43,158,63.68C103.78,75.82,47.89,68.29,0,46.29V120H1200V0C1120,15.76,1055,50.89,985,66.28Z"></path></svg>
+    </div>
 
-  <footer>
-    <p>© 2025 Lokesh Reddy Thipparthi | Built with ❤️</p>
+    <div class="inner">
+      <h2>Projects</h2>
+      <div class="grid proj-grid">
+        <article class="card proj">
+          <h3>Generative AI Copilot</h3>
+          <p>Integrated ML endpoints to automate intelligent prompt-based workflows for Microsoft Factory US at Confiz, improving campaign insights and personalization.</p>
+          <div class="tags"><span>Azure</span><span>LangChain</span><span>Python</span></div>
+        </article>
+        <article class="card proj">
+          <h3>Data Enrichment Utility</h3>
+          <p>Built an end-to-end pipeline enriching cookie & geo data with U.S. Census to enhance audience targeting accuracy and segmentation quality.</p>
+          <div class="tags"><span>Databricks</span><span>PySpark</span><span>SQL</span></div>
+        </article>
+        <article class="card proj">
+          <h3>ML-Powered Audience Insights</h3>
+          <p>Developed predictive models to analyze engagement trends and optimize user cohorts; boosted insight quality for marketing analytics teams.</p>
+          <div class="tags"><span>XGBoost</span><span>sklearn</span><span>Power BI</span></div>
+        </article>
+      </div>
+    </div>
+
+    <button class="scroll-down corner" onclick="scrollToSection('journey')" aria-label="Scroll Down">↓</button>
+
+    <!-- wave bottom to dark -->
+    <div class="wave wave-bottom wave-to-dark" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
+    </div>
+  </section>
+
+  <!-- ===== JOURNEY (Slide 5 – Deep Blue) ===== -->
+  <section id="journey" class="section section-dark">
+    <!-- wave top from light -->
+    <div class="wave wave-top wave-from-light" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985,66.28c-77.67,17.39-161.22,12.89-242,-3.6C620.82,40.43,546,0,451,0S281.11,40.43,158,63.68C103.78,75.82,47.89,68.29,0,46.29V120H1200V0C1120,15.76,1055,50.89,985,66.28Z"></path></svg>
+    </div>
+
+    <div class="inner">
+      <h2>My Journey</h2>
+      <div class="timeline">
+        <!-- Latest (top) -->
+        <div class="tl-item right">
+          <h4>Data & AI Engineer — Confiz (Microsoft Factory US)</h4>
+          <p>Built ML-integrated APIs and intelligent data solutions leveraging Databricks, Azure, and modern GenAI frameworks.</p>
+        </div>
+        <div class="tl-item left">
+          <h4>Master of Science — Information Sciences & Systems (Trine University)</h4>
+          <p>Specialized in ML, data engineering, and cloud analytics; designed end-to-end pipelines and delivered BI outcomes with Power BI and SQL.</p>
+        </div>
+        <div class="tl-item right">
+          <h4>Software Engineer — Krithi Cubersoft</h4>
+          <p>Developed backend components and REST APIs; integrated analytics modules to improve performance and scalability.</p>
+        </div>
+        <!-- Earliest (bottom) -->
+        <div class="tl-item left">
+          <h4>Bachelor’s in Mechanical Engineering (BDL Projects)</h4>
+          <p>Projects on optimization & analysis of seamless rocket motor tubes and Milan 2T missile fin modeling.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="scroll-down corner" onclick="scrollToSection('contact')" aria-label="Scroll Down">↓</button>
+
+    <!-- wave bottom to light -->
+    <div class="wave wave-bottom wave-to-light" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT (Slide 6 – Mist) ===== -->
+  <section id="contact" class="section section-light">
+    <!-- wave top from dark -->
+    <div class="wave wave-top wave-from-dark" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985,66.28c-77.67,17.39-161.22,12.89-242,-3.6C620.82,40.43,546,0,451,0S281.11,40.43,158,63.68C103.78,75.82,47.89,68.29,0,46.29V120H1200V0C1120,15.76,1055,50.89,985,66.28Z"></path></svg>
+    </div>
+
+    <div class="inner">
+      <h2>Contact</h2>
+      <form class="contact-form" id="contactForm">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <textarea id="message" rows="5" placeholder="Message"></textarea>
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+
+      <div class="social">
+        <a target="_blank" href="https://github.com/Lokesh0814" aria-label="GitHub">GitHub</a>
+        <a target="_blank" href="https://www.linkedin.com/in/lokesh-reddy-a1a14731a/" aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:your.email@example.com" aria-label="Email">Email</a>
+      </div>
+    </div>
+
+    <!-- wave bottom END (no next section in this page, but keeps symmetry) -->
+    <div class="wave wave-bottom wave-to-dark end" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Crafted with precision by Lokesh Reddy Thipparthi</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="assets/js/script.js"></script>
 </body>
 </html>
