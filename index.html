@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lokesh Reddy Thipparthi | Data & AI Engineer</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="assets/js/script.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
   <!-- ===== LOADING SCREEN ===== -->
@@ -19,87 +17,115 @@
 
   <!-- ===== NAVBAR ===== -->
   <header class="header">
-  <a href="#" class="logo" id="reloadLogo">LR</a>
-  <nav class="nav">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#journey">My Journey</a>
-    <a href="#contact">Contact</a>
-    <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" target="_blank" class="resume-btn">Resume</a>
-  </nav>
-</header>
+    <a href="#" class="logo" id="reloadLogo">LR</a>
+    <nav class="nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">My Journey</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" target="_blank" class="resume-btn">Resume</a>
+    </nav>
+  </header>
 
-
-  <!-- ===== HERO SECTION ===== -->
-  <section id="home" class="hero">
+  <!-- ===== HERO ===== -->
+  <section id="home" class="section hero">
     <div class="hero-text">
-      <h1>Hi, I’m <span class="highlight">Lokesh Reddy Thipparthi</span></h1>
-      <h2><span id="typed-text"></span></h2>
-      <p>I am a Data & AI Engineer with strong experience in developing analytical and predictive modeling solutions that transform complex datasets into actionable intelligence. My expertise spans Python, PySpark, SQL, Databricks, and Azure, enabling scalable machine learning pipelines and cloud-based analytics. I am deeply passionate about leveraging statistical and generative AI techniques to solve real-world business and product challenges — delivering data-driven insights that improve performance, reliability, and customer outcomes.</p>
-
+      <h1>Hi, I'm <span class="highlight">Lokesh Reddy Thipparthi</span></h1>
+      <h2 id="typed-text"></h2>
+      <p>
+        I am a Data & AI Engineer with strong experience in developing analytical and predictive modeling solutions
+        that transform complex datasets into actionable intelligence. My expertise spans Python, PySpark, SQL,
+        Databricks, and Azure, enabling scalable machine learning pipelines and cloud-based analytics. I am deeply
+        passionate about leveraging statistical and generative AI techniques to solve real-world business and product
+        challenges — delivering data-driven insights that improve performance, reliability, and customer outcomes.
+      </p>
       <div class="buttons">
-        <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" class="btn" target="_blank">View Resume</a>
+        <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" target="_blank" class="btn">View Resume</a>
         <a href="#contact" class="btn-outline">Contact Me</a>
       </div>
     </div>
-
     <div class="hero-img">
-      <img src="assets/images/profile.jpg" alt="Lokesh Reddy Thipparthi">
+      <img src="assets/images/profile.jpg" alt="Lokesh Reddy">
     </div>
   </section>
 
-  <!-- ===== ABOUT SECTION ===== -->
+  <!-- ===== ABOUT ===== -->
   <section id="about" class="section about">
     <h2>About Me</h2>
-    <div class="about-content">
-      <div class="about-left">
-        <p><strong>2+ Years</strong> of professional experience.</p>
-        <p><strong>10+ Projects</strong> completed in data, AI & cloud.</p>
-        <p><strong>Certified:</strong> Databricks GenAI Engineer, Oracle GenAI Pro, OCI AI Associate</p>
+    <p>
+      Experienced Data & AI Engineer passionate about building scalable analytical systems and ML solutions. 
+      Skilled in Python, SQL, Databricks, Azure, and cloud architecture, delivering data-driven insights that 
+      enhance business value.
+    </p>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">Python</div>
+      <div class="skill-card">SQL</div>
+      <div class="skill-card">PySpark</div>
+      <div class="skill-card">Databricks</div>
+      <div class="skill-card">Azure</div>
+      <div class="skill-card">Machine Learning</div>
+      <div class="skill-card">Power BI</div>
+      <div class="skill-card">TensorFlow</div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Generative AI Copilot</h3>
+        <p>Integrated ML endpoints for intelligent prompt-based automation at Confiz (Microsoft Factory US).</p>
       </div>
-      <div class="about-right">
-        <h3>Delivering Scalable, End-to-End Data Solutions</h3>
-        <p>I specialize in building ML pipelines, data enrichment utilities, and intelligent automation systems leveraging Databricks, Azure, and modern LLM frameworks. My focus is always on transforming data into actionable insights that improve reliability and business value.</p>
+      <div class="project-card">
+        <h3>Data Enrichment Utility</h3>
+        <p>Developed data pipeline combining cookie + geo + census data for audience personalization use cases.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== JOURNEY SECTION ===== -->
+  <!-- ===== JOURNEY ===== -->
   <section id="journey" class="section journey">
     <h2>My Journey</h2>
     <div class="timeline">
       <div class="timeline-item left">
         <h3>Senior Data & AI Engineer</h3>
-        <p><strong>Confiz (Microsoft Factory US)</strong> — 2025–Present</p>
-        <p>Designing scalable ML-integrated backend APIs, integrating Azure DevOps pipelines, and enabling prompt intelligence systems across enterprise campaigns.</p>
+        <p>Confiz (Microsoft Factory US) — 2025–Present</p>
+        <p>Designing ML-integrated APIs and scalable data systems using Azure and Databricks.</p>
       </div>
       <div class="timeline-item right">
         <h3>Master’s in Information Systems</h3>
-        <p><strong>Trine University</strong> — 2022–2024</p>
-        <p>Graduated with specialization in Machine Learning, Cloud Computing, and Data Analytics with hands-on academic projects in predictive modeling and GenAI solutions.</p>
+        <p>Trine University — 2022–2024</p>
+        <p>Specialized in ML, Cloud, and Data Analytics.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT SECTION ===== -->
+  <!-- ===== CONTACT ===== -->
   <section id="contact" class="section contact">
     <h2>Contact</h2>
     <form class="contact-form">
       <input type="text" placeholder="Full Name" required>
       <input type="email" placeholder="Email Address" required>
       <textarea placeholder="Message"></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit">Send</button>
     </form>
   </section>
 
   <!-- ===== SCROLL-UP BUTTON ===== -->
-  <button id="scrollToTopBtn" title="Go to top">↑</button>
+  <button id="scrollToTopBtn">↑</button>
 
   <footer>
-    <p>© 2025 Lokesh Reddy Thipparthi | Built with ❤️ & Coffee ☕</p>
+    <p>© 2025 Lokesh Reddy Thipparthi | Built with ❤️</p>
   </footer>
 
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
