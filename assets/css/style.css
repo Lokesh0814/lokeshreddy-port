@@ -64,6 +64,13 @@ img{max-width:100%;display:block}
 }
 .nav a:hover,.nav a.active{background:rgba(255,255,255,.08); color:var(--mist)}
 .resume-btn{border:1px solid rgba(255,255,255,.18)}
+.btn{
+  box-shadow:0 0 12px rgba(0,230,255,0.3);
+}
+.btn:hover{
+  box-shadow:0 0 20px rgba(0,230,255,0.6);
+  transform:translateY(-2px);
+}
 
 /* ========== WAVES ========== */
 .wave{position:absolute;left:0;width:100%;line-height:0}
@@ -98,14 +105,24 @@ img{max-width:100%;display:block}
   border:4px solid rgba(255,255,255,.3); box-shadow:0 12px 40px rgba(0,0,0,.35);
 }
 
-/* Scroll Down buttons */
 .scroll-down{
-  position:absolute;bottom:24px;background:transparent;border:none;color:var(--mist);
-  font-size:22px;cursor:pointer;opacity:.9;transition:transform .2s ease, opacity .2s ease;
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  background:transparent;
+  border:none;
+  color:var(--neon-blue);
+  font-size:28px;
+  cursor:pointer;
+  animation:bounce 1.5s infinite;
+  text-shadow:0 0 10px var(--neon-blue);
 }
-.scroll-down.center{left:50%;transform:translateX(-50%)}
-.scroll-down.corner{right:24px}
-.scroll-down:hover{opacity:1;transform:translateY(-2px)}
+@keyframes bounce{
+  0%,100%{transform:translate(-50%,0)}
+  50%{transform:translate(-50%,-6px)}
+}
+
 
 /* ========== ABOUT ========== */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
@@ -195,3 +212,14 @@ h2{font-family:'Montserrat',sans-serif;font-size:2rem;margin-bottom:18px}
 /* ========== REVEAL ON SCROLL ========== */
 .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
 .reveal.in{opacity:1;transform:none}
+/* ===== Floating hero text ===== */
+@keyframes floatUpDown{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+.float-text{
+  animation:floatUpDown 3s ease-in-out infinite;
+  color:var(--neon-blue);
+  text-shadow:0 0 12px var(--neon-blue);
+}
+
