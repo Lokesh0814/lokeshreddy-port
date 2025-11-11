@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("loader");
-  setTimeout(() => loader.style.display = "none", 4000);
+  const loadingText = document.getElementById("loading-text");
+
+  // Show loader for 3 seconds
+  setTimeout(() => loader.style.display = "none", 3000);
 
   // Typing effect
   const text = "Data & AI Engineer";
@@ -15,6 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   type();
 
+  // Scroll to next section
+  window.scrollToSection = function (id) {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  };
+
   // Scroll to top button
   const scrollBtn = document.getElementById("scrollToTopBtn");
   window.onscroll = () => {
@@ -28,16 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("reloadLogo").addEventListener("click", (e) => {
     e.preventDefault();
     loader.style.display = "flex";
-    setTimeout(() => location.reload(), 4500);
-  });
-
-  // Smooth scroll and active nav link
-  const navLinks = document.querySelectorAll('.nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-    });
+    setTimeout(() => location.reload(), 3000);
   });
 });
+
 
