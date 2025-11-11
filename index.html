@@ -1,258 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lokesh Reddy Thipparthi | Data & AI Engineer</title>
-
-  <!-- Google Fonts (Poppins / Montserrat, like the reference) -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome (icons for buttons / contact) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- ===== Loader (5s max like reference) ===== -->
+  <!-- ===== LOADING SCREEN ===== -->
   <div id="loader">
     <div class="spinner"></div>
-    <p>Loading…</p>
+    <h2>Loading...</h2>
   </div>
 
-  <!-- ===== Sticky Navbar ===== -->
-  <header class="site-header">
-    <nav class="nav container">
-      <div class="brand">LR</div>
-      <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
-      <ul class="nav-links" id="navLinks">
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#journey">My Journey</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a class="resume-chip" target="_blank" href="assets/Lokesh_Thipparthi_Data_AI_Engineer.pdf"><i class="fa-solid fa-cloud-arrow-down"></i> Resume</a></li>
-      </ul>
+  <!-- ===== NAVBAR ===== -->
+  <header class="header">
+    <div class="logo">LR</div>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">My Journey</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" target="_blank" class="resume-btn">Resume</a>
     </nav>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section id="home" class="hero section container">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <h4 class="eyebrow"><span></span> Hi, I am</h4>
-        <h1 class="title">Lokesh Reddy <span class="accent">Thipparthi</span></h1>
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Hi, I’m <span class="highlight">Lokesh Reddy Thipparthi</span></h1>
+      <h2><span id="typed-text"></span></h2>
+      <p>I am a Data & AI Engineer with strong experience in developing analytical and predictive modeling solutions that transform complex datasets into actionable intelligence. My expertise spans Python, PySpark, SQL, Databricks, and Azure, enabling scalable machine learning pipelines and cloud-based analytics. I am deeply passionate about leveraging statistical and generative AI techniques to solve real-world business and product challenges — delivering data-driven insights that improve performance, reliability, and customer outcomes.</p>
 
-        <!-- Motion role (typed) -->
-        <h2 class="role"><span id="typedRole">Data &amp; AI Engineer</span></h2>
-
-        <p class="lead">
-          I am a Data & AI Engineer with strong experience in developing analytical and predictive modeling solutions
-          that transform complex datasets into actionable intelligence. My expertise spans Python, PySpark, SQL,
-          Databricks, and Azure, enabling scalable machine learning pipelines and cloud-based analytics. I am deeply
-          passionate about leveraging statistical and generative AI techniques to solve real-world business and product
-          challenges — delivering data-driven insights that improve performance, reliability, and customer outcomes.
-        </p>
-
-        <div class="cta">
-          <a class="btn btn-primary" target="_blank" href="assets/Lokesh_Thipparthi_Data_AI_Engineer.pdf">
-            <i class="fa-solid fa-file-lines"></i> View Resume
-          </a>
-          <a class="btn btn-ghost" href="#contact"><i class="fa-solid fa-envelope"></i> Contact Me</a>
-        </div>
-
-        <div class="scroll-down"><i class="fa-solid fa-angles-down"></i> Scroll Down</div>
+      <div class="buttons">
+        <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" class="btn" target="_blank">View Resume</a>
+        <a href="#contact" class="btn-outline">Contact Me</a>
       </div>
+    </div>
 
-      <!-- Hero image (place your photo at assets/images/profile.jpg) -->
-      <div class="hero-img">
-        <img src="assets/images/profile.jpg" alt="Lokesh Reddy Thipparthi" />
-        <div class="burst"></div>
-      </div>
+    <div class="hero-img">
+      <img src="assets/images/profile.jpg" alt="Lokesh Reddy Thipparthi">
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about" class="about section container">
-    <h3 class="section-tag">About Me</h3>
-    <div class="about-grid">
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="section about">
+    <h2>About Me</h2>
+    <div class="about-content">
       <div class="about-left">
-        <div class="stat">
-          <i class="fa-solid fa-briefcase"></i>
-          <div>
-            <div class="stat-big">3+ Years</div>
-            <div class="stat-sub">Experience</div>
-          </div>
-        </div>
-
-        <div class="stat">
-          <i class="fa-solid fa-diagram-project"></i>
-          <div>
-            <div class="stat-big">10+ Projects</div>
-            <div class="stat-sub">Completed</div>
-          </div>
-        </div>
-
-        <div class="stat">
-          <i class="fa-solid fa-certificate"></i>
-          <div>
-            <div class="stat-big">OCI & Databricks</div>
-            <div class="stat-sub">Certified</div>
-          </div>
-        </div>
-
-        <!-- Optional badge image -->
-        <!-- <img class="badge" src="assets/images/cert_badge.png" alt="Certification"> -->
+        <p><strong>2+ Years</strong> of professional experience.</p>
+        <p><strong>10+ Projects</strong> completed in data, AI & cloud.</p>
+        <p><strong>Certified:</strong> Databricks GenAI Engineer, Oracle GenAI Pro, OCI AI Associate</p>
       </div>
-
       <div class="about-right">
-        <h2 class="about-title">
-          Searching for a <span class="accent">Data & AI</span> expert who delivers
-          <span class="accent">scalable</span>, <span class="accent">end-to-end</span> solutions?
-        </h2>
-        <p class="about-body">
-          I build cloud-native data pipelines, ML workflows, and analytics that turn raw data into decisions.
-          I care about reliability, performance, and measurable business value — whether it’s modern data platforms,
-          MLOps, or applied GenAI.
-        </p>
+        <h3>Delivering Scalable, End-to-End Data Solutions</h3>
+        <p>I specialize in building ML pipelines, data enrichment utilities, and intelligent automation systems leveraging Databricks, Azure, and modern LLM frameworks. My focus is always on transforming data into actionable insights that improve reliability and business value.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROJECTS (carousel) ===== -->
-  <section id="projects" class="projects section container">
-    <h3 class="section-tag">Projects</h3>
-
-    <div class="carousel">
-      <button class="nav prev" id="projPrev"><i class="fa-solid fa-chevron-left"></i></button>
-
-      <div class="track" id="projTrack">
-        <!-- CARD 1 -->
-        <article class="card">
-          <img src="assets/images/projects/beatbox.jpg" alt="Beatbox Brain" />
-          <div class="card-body">
-            <h4>GenAI RAG Chatbot</h4>
-            <p>Retrieval-Augmented Generation assistant using Azure OpenAI + vector search (FAISS) for enterprise docs.</p>
-            <div class="chips">
-              <span>Python</span><span>LangChain</span><span>OpenAI</span>
-            </div>
-            <a class="btn btn-mini" target="_blank" href="#">Source Code</a>
-          </div>
-        </article>
-
-        <!-- CARD 2 -->
-        <article class="card">
-          <img src="assets/images/projects/etl.jpg" alt="ETL" />
-          <div class="card-body">
-            <h4>Databricks ETL & Lakehouse</h4>
-            <p>Delta pipelines with PySpark + Auto-Loader; BI model served to Power BI for exec dashboards.</p>
-            <div class="chips">
-              <span>PySpark</span><span>Delta</span><span>Power BI</span>
-            </div>
-            <a class="btn btn-mini" target="_blank" href="#">Source Code</a>
-          </div>
-        </article>
-
-        <!-- CARD 3 -->
-        <article class="card">
-          <img src="assets/images/projects/forecast.jpg" alt="Forecast" />
-          <div class="card-body">
-            <h4>Demand Forecasting</h4>
-            <p>XGBoost/LightGBM ensemble for demand prediction; improved MAPE by 18% on multivariate data.</p>
-            <div class="chips">
-              <span>XGBoost</span><span>LightGBM</span><span>sklearn</span>
-            </div>
-            <a class="btn btn-mini" target="_blank" href="#">Source Code</a>
-          </div>
-        </article>
-      </div>
-
-      <button class="nav next" id="projNext"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
-
-    <div class="dots" id="projDots"></div>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section id="skills" class="skills section container">
-    <h3 class="section-tag">Skills</h3>
-
-    <h4 class="group-title">Programming & ML</h4>
-    <div class="skill-grid">
-      <div class="skill"><img src="assets/images/skills/python.png" alt=""><p>Python</p></div>
-      <div class="skill"><img src="assets/images/skills/pyspark.png" alt=""><p>PySpark</p></div>
-      <div class="skill"><img src="assets/images/skills/sql.png" alt=""><p>SQL</p></div>
-      <div class="skill"><img src="assets/images/skills/sklearn.png" alt=""><p>Scikit-learn</p></div>
-      <div class="skill"><img src="assets/images/skills/xgboost.png" alt=""><p>XGBoost</p></div>
-      <div class="skill"><img src="assets/images/skills/lightgbm.png" alt=""><p>LightGBM</p></div>
-      <div class="skill"><img src="assets/images/skills/nlp.png" alt=""><p>NLP</p></div>
-    </div>
-
-    <h4 class="group-title">Platforms & BI</h4>
-    <div class="skill-grid">
-      <div class="skill"><img src="assets/images/skills/databricks.png" alt=""><p>Databricks</p></div>
-      <div class="skill"><img src="assets/images/skills/azure.png" alt=""><p>Azure</p></div>
-      <div class="skill"><img src="assets/images/skills/powerbi.png" alt=""><p>Power BI</p></div>
-      <div class="skill"><img src="assets/images/skills/git.png" alt=""><p>Git</p></div>
-    </div>
-  </section>
-
-  <!-- ===== JOURNEY (timeline) ===== -->
-  <section id="journey" class="journey section container">
-    <h3 class="section-tag">My Journey</h3>
+  <!-- ===== JOURNEY SECTION ===== -->
+  <section id="journey" class="section journey">
+    <h2>My Journey</h2>
     <div class="timeline">
-      <div class="tl-card">
-        <div class="tl-date"><i class="fa-regular fa-calendar"></i> 2023 — Present</div>
-        <h4 class="tl-title"><i class="fa-solid fa-briefcase"></i> Data & AI Engineer</h4>
-        <p>Built ML/analytics products using Databricks, PySpark, and Azure; led RAG prototypes and BI rollouts.</p>
+      <div class="timeline-item left">
+        <h3>Senior Data & AI Engineer</h3>
+        <p><strong>Confiz (Microsoft Factory US)</strong> — 2025–Present</p>
+        <p>Designing scalable ML-integrated backend APIs, integrating Azure DevOps pipelines, and enabling prompt intelligence systems across enterprise campaigns.</p>
       </div>
-
-      <div class="tl-card alt">
-        <div class="tl-date"><i class="fa-regular fa-calendar"></i> 2021 — 2023</div>
-        <h4 class="tl-title"><i class="fa-solid fa-user-graduate"></i> M.S. in Information Sciences</h4>
-        <p>Advanced analytics, cloud data systems, ML, and information retrieval projects.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="contact section container">
-    <h3 class="section-tag">Contact</h3>
-    <h2 class="contact-title">Call or write <span class="accent">anytime</span></h2>
-
-    <div class="contact-grid">
-      <form id="contactForm" class="form">
-        <label>Full Name</label>
-        <input type="text" id="name" required />
-        <label>E-mail Address</label>
-        <input type="email" id="email" required />
-        <label>Message</label>
-        <textarea id="message" rows="5" required></textarea>
-        <button class="btn btn-primary" type="submit"><i class="fa-regular fa-paper-plane"></i> Send Message</button>
-      </form>
-
-      <div class="contact-ill">
-        <img src="assets/images/contact.svg" alt="Contact Illustration">
-      </div>
-    </div>
-
-    <div class="social">
-      <p>Get in touch</p>
-      <div class="icons">
-        <a target="_blank" href="https://github.com/Lokesh0814"><i class="fa-brands fa-github"></i></a>
-        <a target="_blank" href="https://www.linkedin.com/in/lokesh-reddy-a1a14731a/"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="mailto:YOUR_EMAIL_HERE"><i class="fa-solid fa-envelope"></i></a>
+      <div class="timeline-item right">
+        <h3>Master’s in Information Systems</h3>
+        <p><strong>Trine University</strong> — 2022–2024</p>
+        <p>Graduated with specialization in Machine Learning, Cloud Computing, and Data Analytics with hands-on academic projects in predictive modeling and GenAI solutions.</p>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <p>© 2025 Lokesh Reddy Thipparthi • Built with ❤ • <a target="_blank" href="https://www.linkedin.com/in/lokesh-reddy-a1a14731a/">LinkedIn</a></p>
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ===== SCROLL-UP BUTTON ===== -->
+  <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+  <footer>
+    <p>© 2025 Lokesh Reddy Thipparthi | Built with ❤️ & Coffee ☕</p>
   </footer>
 
-  <script src="assets/js/script.js"></script>
 </body>
 </html>
-
