@@ -1,11 +1,23 @@
 /* ========== THEME COLORS ========== */
 :root{
-  --deep-blue:#2C3E50;   /* main dark */
-  --slate:#34495E;       /* headers/hover */
-  --silver:#BDC3C7;      /* soft text/borders */
-  --mist:#ECF0F1;        /* light sections */
-  --white:#ffffff;
+  --neon-blue:#00e6ff;
+  --neon-skin:#f8d7b0;
+  --dark-bg:#0a0f1a;
+  --mid-bg:#111827;
+  --light-bg:#f5f7fa;
+  --text-light:#ffffff;
+  --text-dark:#0f172a;
+  --muted:#94a3b8;
   --max:1180px;
+}
+body{
+  background:var(--dark-bg);
+  color:var(--text-light);
+  font-family:'Orbitron', 'Poppins', sans-serif;
+}
+h1,h2,h3,h4{
+  font-family:'Orbitron','Montserrat',sans-serif;
+  letter-spacing:1px;
 }
 
 /* ========== BASE ========== */
