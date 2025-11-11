@@ -31,4 +31,18 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.getElementById("loader").style.display = "none";
   }, 3000);
+  // Logo Reload Effect
+const reloadLogo = document.getElementById("reloadLogo");
+
+reloadLogo.addEventListener("click", (e) => {
+  e.preventDefault();
+  const loader = document.getElementById("loader");
+  loader.style.display = "flex"; // show loader
+  window.scrollTo(0, 0);
+
+  // wait 4.5 seconds then reload content
+  setTimeout(() => {
+    location.reload();
+  }, 4500);
+});
 });
