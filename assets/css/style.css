@@ -158,13 +158,90 @@ h2{font-family:'Montserrat',sans-serif;font-size:2rem;margin-bottom:18px}
 .skill:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(0,0,0,.12)}
 
 /* ========== PROJECTS ========== */
-.proj-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.proj.card{padding:18px}
-.proj h3{font-family:'Montserrat',sans-serif;margin-bottom:8px;color:#2c3e50}
-.section-dark .proj h3{color:var(--mist)}
-.proj p{color:#495a69}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.tags span{background:#eef3f6;border:1px solid #e1e8ee;border-radius:999px;padding:4px 10px;font-size:.9rem;color:#2c3e50}
+./* ==== Projects Grid – Enhanced Neon Style ==== */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 40px 0;
+}
+
+/* Arrange: first two side by side, last one centered */
+.proj-grid .proj:nth-child(3) {
+  grid-column: 1 / -1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.proj.card {
+  background: rgba(17, 25, 40, 0.95);
+  border: 2px solid var(--neon-blue);
+  border-radius: 14px;
+  padding: 26px 24px;
+  color: #e0e7ff;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.proj.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 35px rgba(244, 114, 182, 0.5);
+}
+
+.proj h3 {
+  font-family: 'Orbitron', 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.proj h3 i {
+  color: var(--neon-blue);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.proj.card:hover h3 i {
+  color: var(--neon-pink);
+  transform: rotate(12deg);
+}
+
+.proj p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.96rem;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tags span {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 0.85rem;
+  color: var(--neon-blue);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tags span:hover {
+  background: var(--neon-pink);
+  color: #fff;
+}
+
 
 /* ========== JOURNEY ========== */
 .timeline{position:relative;margin-top:8px}
