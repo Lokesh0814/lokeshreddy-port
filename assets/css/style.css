@@ -159,62 +159,69 @@ h2{font-family:'Montserrat',sans-serif;font-size:2rem;margin-bottom:18px}
 
 /* ========== PROJECTS ========== */
 ./* ==== Projects Grid – Enhanced Neon Style ==== */
+
+/* ==== Projects Grid – Neon Green on Black ==== */
+.section-dark {
+  background-color: #000;
+  color: #d1fae5; /* light mint text */
+}
+
 .proj-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 40px;
   justify-content: center;
   align-items: stretch;
-  padding: 40px 0;
+  padding: 50px 0;
 }
 
 /* Arrange: first two side by side, last one centered */
 .proj-grid .proj:nth-child(3) {
   grid-column: 1 / -1;
-  max-width: 720px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .proj.card {
-  background: rgba(17, 25, 40, 0.95);
-  border: 2px solid var(--neon-blue);
+  background: rgba(10, 20, 10, 0.95);
+  border: 2px solid #00ff88;
   border-radius: 14px;
   padding: 26px 24px;
-  color: #e0e7ff;
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+  color: #d1fae5;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .proj.card:hover {
   transform: translateY(-10px) scale(1.03);
-  border-color: var(--neon-pink);
-  box-shadow: 0 0 35px rgba(244, 114, 182, 0.5);
+  border-color: #00ffaa;
+  box-shadow: 0 0 40px rgba(0, 255, 136, 0.5);
 }
 
 .proj h3 {
   font-family: 'Orbitron', 'Poppins', sans-serif;
   font-size: 1.3rem;
-  color: var(--neon-blue);
-  text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
-  margin-bottom: 10px;
+  color: #00ffaa;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .proj h3 i {
-  color: var(--neon-blue);
+  color: #00ffaa;
   font-size: 1.2rem;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .proj.card:hover h3 i {
-  color: var(--neon-pink);
+  color: #39ff14;
   transform: rotate(12deg);
 }
 
 .proj p {
-  color: var(--muted);
+  color: #a7f3d0;
   line-height: 1.6;
   font-size: 0.96rem;
   margin-bottom: 10px;
@@ -228,18 +235,18 @@ h2{font-family:'Montserrat',sans-serif;font-size:2rem;margin-bottom:18px}
 }
 
 .tags span {
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.3);
   border-radius: 999px;
   padding: 5px 13px;
   font-size: 0.85rem;
-  color: var(--neon-blue);
+  color: #00ffaa;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .tags span:hover {
-  background: var(--neon-pink);
-  color: #fff;
+  background: #00ffaa;
+  color: #000;
 }
 
 
