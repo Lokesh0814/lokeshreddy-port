@@ -222,4 +222,13 @@ h2{font-family:'Montserrat',sans-serif;font-size:2rem;margin-bottom:18px}
   color:var(--neon-blue);
   text-shadow:0 0 12px var(--neon-blue);
 }
+.proj h3 {
+  color: var(--neon-blue);
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+.proj:hover {
+  transform: scale(1.03);
+  background: rgba(56, 189, 248, 0.05);
+}
 
