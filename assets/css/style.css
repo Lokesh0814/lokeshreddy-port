@@ -231,4 +231,15 @@ h2{font-family:'Montserrat',sans-serif;font-size:2rem;margin-bottom:18px}
   transform: scale(1.03);
   background: rgba(56, 189, 248, 0.05);
 }
+.proj h3 i {
+  color: var(--neon-blue);
+  margin-right: 8px;
+  text-shadow: 0 0 10px var(--neon-blue);
+  transition: transform 0.3s ease;
+}
+.proj:hover i {
+  color: var(--neon-pink);
+  transform: rotate(15deg);
+}
+
 
