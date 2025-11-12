@@ -72,3 +72,22 @@ if(form){
     window.location.href = `mailto:${to}?subject=Portfolio%20Contact&body=${body}`;
   });
 }
+/* Sections */
+.section{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;
+padding:120px 80px;background:var(--bg);}
+.inner{max-width:1100px;width:100%;text-align:center;}
+h2{font-family:'Orbitron',sans-serif;color:var(--neon);margin-bottom:30px;}
+
+/* Home */
+.home-content h1{font-size:2rem;margin-bottom:10px;}
+.highlight{color:var(--neon);}
+.typewriter{font-size:1.5rem;font-family:'Orbitron',sans-serif;color:var(--neon);
+animation:float 2.5s infinite ease-in-out;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+
+.buttons{margin-top:20px;}
+.btn,.btn-outline{padding:10px 20px;margin:5px 10px;text-decoration:none;border-radius:5px;
+font-weight:600;transition:all .3s ease;}
+.btn{background:var(--neon);color:#000;}
+.btn-outline{border:1px solid var(--neon);color:var(--neon);}
+.btn-outline:hover{background:var(--neon);color:#000;}
