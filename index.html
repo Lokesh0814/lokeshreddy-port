@@ -73,56 +73,73 @@
     </div>
 
    <!-- ===== PROJECTS ===== -->
-<section id="projects" class="section section-light" style="position:relative;">
+<!-- ===== PROJECTS SECTION ===== -->
+<section id="projects" class="section section-dark" style="background:#0a0f1a;">
   <div class="inner">
     <h2>Projects</h2>
-    <div class="grid proj-grid">
 
-      <!-- Project 1 -->
+    <div class="grid proj-grid">
+      <!-- === Modern / Data & AI Projects === -->
       <div class="card proj">
-        <h3><i class="fa-solid fa-brain"></i> Predictive Failure Modeling for Hydrogen Powertrain Components</h3>
+        <h3><i class="fa-solid fa-robot"></i> Generative AI Copilot</h3>
         <p>
-          Built a predictive model in <b>Python</b> using <b>scikit-learn</b> to assess failure risks in hydrogen powertrain components,
-          improving reliability and reducing unplanned downtime.
-          Explored multivariate sensor data and applied survival analysis to uncover failure patterns,
-          visualized through <b>Power BI dashboards</b> for engineering teams.
-          Simulated cloud deployment with <b>PySpark</b> and <b>Azure</b> to handle large-scale sensor data and enable scalable, real-time analytics.
+          Integrated <b>ML endpoints</b> to automate intelligent prompt-based workflows for <b>Microsoft Factory US</b> at Confiz,
+          improving campaign insights and personalization.
         </p>
-        <div class="tags">
-          <span>Python</span><span>scikit-learn</span><span>Power BI</span><span>PySpark</span><span>Azure</span>
-        </div>
+        <div class="tags"><span>Azure</span><span>LangChain</span><span>Python</span></div>
       </div>
 
-      <!-- Project 2 -->
+      <div class="card proj">
+        <h3><i class="fa-solid fa-database"></i> Data Enrichment Utility</h3>
+        <p>
+          Built an <b>end-to-end pipeline</b> enriching cookie & geo data with <b>U.S. Census</b> datasets to enhance audience targeting
+          accuracy and segmentation quality.
+        </p>
+        <div class="tags"><span>Databricks</span><span>PySpark</span><span>SQL</span></div>
+      </div>
+
+      <div class="card proj">
+        <h3><i class="fa-solid fa-chart-line"></i> ML-Powered Audience Insights</h3>
+        <p>
+          Developed <b>predictive models</b> to analyze engagement trends and optimize user cohorts, boosting insight quality for
+          marketing analytics teams.
+        </p>
+        <div class="tags"><span>XGBoost</span><span>sklearn</span><span>Power BI</span></div>
+      </div>
+
+      <!-- === Research / Engineering Projects === -->
+      <div class="card proj">
+        <h3><i class="fa-solid fa-flask"></i> Predictive Failure Modeling for Hydrogen Powertrain Components</h3>
+        <p>
+          Built a predictive model in <b>Python</b> using <b>scikit-learn</b> to assess failure risks in hydrogen powertrain components,
+          improving reliability and reducing downtime. Simulated cloud deployment with <b>PySpark</b> and <b>Azure</b>.
+        </p>
+        <div class="tags"><span>Python</span><span>scikit-learn</span><span>PySpark</span><span>Azure</span></div>
+      </div>
+
       <div class="card proj">
         <h3><i class="fa-solid fa-gears"></i> Optimization and Analysis of Seamless Rocket Motor Tubes</h3>
         <p>
-          <b>Jan 2018 – Mar 2018</b><br>
-          Designed and validated a simulation model for rocket motor tubes using <b>ANSYS</b> and <b>MATLAB</b>,
-          improving structural performance predictions by 15% and ensuring safety compliance through high-pressure prototype testing.
-          Performed stress and thermal analysis under extreme launch conditions and collaborated on <b>FEA-driven material optimization</b>,
-          achieving a 10% weight reduction without compromising strength.
+          Designed and validated a simulation model for rocket motor tubes using <b>ANSYS</b> and <b>MATLAB</b>, improving structural performance
+          predictions by 15% and achieving a 10% weight reduction through FEA-driven optimization.
         </p>
-        <div class="tags">
-          <span>ANSYS</span><span>MATLAB</span><span>FEA</span><span>Simulation</span>
-        </div>
+        <div class="tags"><span>ANSYS</span><span>MATLAB</span><span>FEA</span><span>Simulation</span></div>
       </div>
 
-      <!-- Project 3 -->
       <div class="card proj">
         <h3><i class="fa-solid fa-rocket"></i> Modeling and Analysis of Milan 2T Missile Fin</h3>
         <p>
-          <b>Feb 2019 – May 2019</b><br>
           Developed and refined <b>3D CAD models</b> of Milan 2T missile fins using <b>CATIA</b>, <b>ANSYS</b>, and <b>MATLAB</b>,
-          boosting precision, improving flight stability, and reducing design iterations by 15%.
-          Enhanced fin geometry and material efficiency via <b>FEA</b>, achieving a 5% weight reduction while maintaining aerodynamic stability.
+          improving flight stability and reducing design iterations by 15%.
         </p>
-        <div class="tags">
-          <span>CATIA</span><span>ANSYS</span><span>MATLAB</span><span>FEA</span><span>CAD</span>
-        </div>
+        <div class="tags"><span>CATIA</span><span>ANSYS</span><span>MATLAB</span><span>FEA</span></div>
       </div>
     </div>
   </div>
+
+  <button class="scroll-down" onclick="scrollToSection('journey')">↓</button>
+</section>
+
 
   <!-- scroll down to next section -->
   <button class="scroll-down" onclick="scrollToSection('journey')">↓</button>
