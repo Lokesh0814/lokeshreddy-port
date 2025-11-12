@@ -1,327 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lokesh Reddy Thipparthi | Data & AI Engineer</title>
-
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lokesh Reddy Thipparthi — Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/logo.png" />
+  <script src="https://kit.fontawesome.com/8b0e1a1d2c.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- ===== LOADING (1s, three dots) ===== -->
+  <!-- LOADING SCREEN -->
   <div id="loader">
-    <h2 id="loadingText">Loading</h2>
+    <h2>Loading<span class="dots">...</span></h2>
   </div>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- HEADER -->
   <header class="header">
-    <a href="#" class="logo" id="reloadLogo" aria-label="Reload">LR</a>
+    <a href="#" class="logo" id="reloadLogo">LR</a>
     <nav class="nav">
-      <a href="#home" class="active">Home</a>
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#journey">My Journey</a>
+      <a href="#journey">Journey</a>
       <a href="#contact">Contact</a>
       <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" target="_blank" class="resume-btn">Resume</a>
     </nav>
   </header>
 
-  <!-- ===== HERO (Slide 1 – Deep Blue) ===== -->
-  <section id="home" class="section hero section-dark">
-    <div class="inner hero-grid">
-      <div class="hero-text">
-        <h1>Hi, I’m <span class="accent">Lokesh Reddy Thipparthi</span></h1>
-        <h2 id="typedRole" class="typed float-text"></h2>
-
-        <p class="lead">
-          I am a Data & AI Engineer with strong experience in developing analytical and predictive modeling solutions
-          that transform complex datasets into actionable intelligence. My expertise spans Python, PySpark, SQL,
-          Databricks, and Azure, enabling scalable machine learning pipelines and cloud-based analytics. I am deeply
-          passionate about leveraging statistical and generative AI techniques to solve real-world business and product
-          challenges — delivering data-driven insights that improve performance, reliability, and customer outcomes.
-        </p>
-        <div class="cta">
-          <a class="btn primary" target="_blank" href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf">View Resume</a>
-          <a class="btn ghost" href="#contact">Contact Me</a>
-        </div>
-      </div>
-      <div class="hero-img">
-        <img src="assets/images/profile.jpg" alt="Lokesh Reddy Thipparthi" />
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="section">
+    <div class="inner home-content">
+      <h1>Hi, I'm <span class="highlight">Lokesh Reddy Thipparthi</span></h1>
+      <h2 class="typewriter">Data &amp; AI Engineer</h2>
+      <div class="buttons">
+        <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" target="_blank" class="btn">View Resume</a>
+        <a href="#contact" class="btn-outline">Contact Me</a>
       </div>
     </div>
-    <button class="scroll-down center" onclick="scrollToSection('about')" aria-label="Scroll Down">↓</button>
-    <!-- wave bottom to white -->
-    <div class="wave wave-bottom wave-to-light" aria-hidden="true">
-      <!-- Dark to light wave -->
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
-    </div>
+    <button class="scroll-down" onclick="scrollToSection('about')">↓</button>
   </section>
 
-  <!-- ===== ABOUT (Slide 2 – Mist) ===== -->
-  <section id="about" class="section section-light">
-    <!-- wave top from dark -->
-    <div class="wave wave-top wave-from-dark" aria-hidden="true">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985,66.28c-77.67,17.39-161.22,12.89-242, -3.6C620.82,40.43,546,0,451,0S281.11,40.43,158,63.68C103.78,75.82,47.89,68.29,0,46.29V120H1200V0C1120,15.76,1055,50.89,985,66.28Z"></path></svg>
-    </div>
-
-   <!-- ===== PROJECTS ===== -->
-<!-- ===== PROJECTS SECTION ===== -->
-<section id="projects" class="section section-dark" style="background:#0a0f1a;">
-  <div class="inner">
-    <h2>Projects</h2>
-
-    <div class="grid proj-grid">
-      <!-- === Modern / Data & AI Projects === -->
-      <div class="card proj">
-        <h3><i class="fa-solid fa-robot"></i> Generative AI Copilot</h3>
-        <p>
-          Integrated <b>ML endpoints</b> to automate intelligent prompt-based workflows for <b>Microsoft Factory US</b> at Confiz,
-          improving campaign insights and personalization.
-        </p>
-        <div class="tags"><span>Azure</span><span>LangChain</span><span>Python</span></div>
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="section">
+    <div class="inner about-grid">
+      <div class="about-left">
+        <h2>About Me</h2>
+        <ul>
+          <li>💡 2+ Years Experience in Data & AI Engineering</li>
+          <li>⚙️ Expertise in Python · SQL · Databricks · Azure</li>
+          <li>📊 Skilled in building ML pipelines and analytics</li>
+          <li>🏆 Certified Azure & OCI Generative AI Engineer</li>
+        </ul>
       </div>
-
-      <div class="card proj">
-        <h3><i class="fa-solid fa-database"></i> Data Enrichment Utility</h3>
+      <div class="about-right">
+        <h3>Transforming Data into Intelligence</h3>
         <p>
-          Built an <b>end-to-end pipeline</b> enriching cookie & geo data with <b>U.S. Census</b> datasets to enhance audience targeting
-          accuracy and segmentation quality.
-        </p>
-        <div class="tags"><span>Databricks</span><span>PySpark</span><span>SQL</span></div>
-      </div>
-
-      <div class="card proj">
-        <h3><i class="fa-solid fa-chart-line"></i> ML-Powered Audience Insights</h3>
-        <p>
-          Developed <b>predictive models</b> to analyze engagement trends and optimize user cohorts, boosting insight quality for
-          marketing analytics teams.
-        </p>
-        <div class="tags"><span>XGBoost</span><span>sklearn</span><span>Power BI</span></div>
-      </div>
-
-      <!-- === Research / Engineering Projects === -->
-      <div class="card proj">
-        <h3><i class="fa-solid fa-flask"></i> Predictive Failure Modeling for Hydrogen Powertrain Components</h3>
-        <p>
-          Built a predictive model in <b>Python</b> using <b>scikit-learn</b> to assess failure risks in hydrogen powertrain components,
-          improving reliability and reducing downtime. Simulated cloud deployment with <b>PySpark</b> and <b>Azure</b>.
-        </p>
-        <div class="tags"><span>Python</span><span>scikit-learn</span><span>PySpark</span><span>Azure</span></div>
-      </div>
-
-      <div class="card proj">
-        <h3><i class="fa-solid fa-gears"></i> Optimization and Analysis of Seamless Rocket Motor Tubes</h3>
-        <p>
-          Designed and validated a simulation model for rocket motor tubes using <b>ANSYS</b> and <b>MATLAB</b>, improving structural performance
-          predictions by 15% and achieving a 10% weight reduction through FEA-driven optimization.
-        </p>
-        <div class="tags"><span>ANSYS</span><span>MATLAB</span><span>FEA</span><span>Simulation</span></div>
-      </div>
-
-      <div class="card proj">
-        <h3><i class="fa-solid fa-rocket"></i> Modeling and Analysis of Milan 2T Missile Fin</h3>
-        <p>
-          Developed and refined <b>3D CAD models</b> of Milan 2T missile fins using <b>CATIA</b>, <b>ANSYS</b>, and <b>MATLAB</b>,
-          improving flight stability and reducing design iterations by 15%.
-        </p>
-        <div class="tags"><span>CATIA</span><span>ANSYS</span><span>MATLAB</span><span>FEA</span></div>
-      </div>
-    </div>
-  </div>
-
-  <button class="scroll-down" onclick="scrollToSection('journey')">↓</button>
-</section>
-
-
-  <!-- scroll down to next section -->
-  <button class="scroll-down" onclick="scrollToSection('journey')">↓</button>
-</section>
-
-      <!-- Right: headline + two paragraphs -->
-      <div class="about-right card">
-        <p class="tagline">Turning data into <b>scalable</b>, <b>AI-driven</b> solutions.</p>
-        <h3>Searching for a Data & AI engineer who delivers end-to-end impact?</h3>
-        <p>
-          I design ML-integrated data systems across ingestion, transformation, model training, and deployment using
-          Python, PySpark, SQL, Databricks, and Azure. My work blends analytics, software craftsmanship, and cloud
-          architecture to solve real business problems.
+          I build scalable data solutions that convert raw datasets into insightful narratives driving business decisions.
+          With hands-on expertise in Databricks, Azure ML, and Generative AI frameworks, I develop end-to-end pipelines
+          for predictive modeling and recommendation systems.
         </p>
         <p>
-          At Confiz (Microsoft Factory US), I’ve built intelligent automation and analytics solutions. My master’s at
-          Trine University focused on applied ML, cloud analytics, and data engineering — with an emphasis on
-          reproducibility, BI outcomes, and enterprise readiness.
+          Passionate about applying AI ethically and efficiently to create meaningful impact at scale.
         </p>
       </div>
     </div>
-
-    <button class="scroll-down corner" onclick="scrollToSection('skills')" aria-label="Scroll Down">↓</button>
-
-    <!-- waves: bottom to dark -->
-    <div class="wave wave-bottom wave-to-dark" aria-hidden="true">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
-    </div>
+    <button class="scroll-down" onclick="scrollToSection('skills')">↓</button>
   </section>
 
-  <!-- ===== SKILLS (Slide 3 – Deep Blue) ===== -->
-  <section id="skills" class="section section-dark">
-    <!-- wave top from light -->
-    <div class="wave wave-top wave-from-light" aria-hidden="true">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985,66.28c-77.67,17.39-161.22,12.89-242,-3.6C620.82,40.43,546,0,451,0S281.11,40.43,158,63.68C103.78,75.82,47.89,68.29,0,46.29V120H1200V0C1120,15.76,1055,50.89,985,66.28Z"></path></svg>
-    </div>
-
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="section">
     <div class="inner">
       <h2>Skills</h2>
-
-      <h4 class="group-title">Programming & ML</h4>
-      <div class="grid skills-grid">
-        <div class="skill">Python</div>
-        <div class="skill">PySpark</div>
-        <div class="skill">SQL</div>
-        <div class="skill">Scikit-learn</div>
-        <div class="skill">TensorFlow</div>
-        <div class="skill">XGBoost</div>
-        <div class="skill">LightGBM</div>
-        <div class="skill">NLP</div>
-      </div>
-
-      <h4 class="group-title">Platforms & Tools</h4>
-      <div class="grid skills-grid">
-        <div class="skill">Databricks</div>
-        <div class="skill">Azure</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Tableau</div>
-        <div class="skill">Docker</div>
-        <div class="skill">Git / CI-CD</div>
-        <div class="skill">Kafka</div>
-        <div class="skill">Airflow</div>
+      <div class="skills-grid">
+        <span>Python</span><span>PySpark</span><span>SQL</span><span>Databricks</span><span>LangChain</span>
+        <span>Power BI</span><span>Azure</span><span>Machine Learning</span><span>Generative AI</span><span>RAG Pipeline</span>
       </div>
     </div>
-
-    <button class="scroll-down corner" onclick="scrollToSection('projects')" aria-label="Scroll Down">↓</button>
-
-    <!-- wave bottom to light -->
-    <div class="wave wave-bottom wave-to-light" aria-hidden="true">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
-    </div>
+    <button class="scroll-down" onclick="scrollToSection('projects')">↓</button>
   </section>
 
-  <!-- ===== PROJECTS (Slide 4 – Mist) ===== -->
-  <section id="projects" class="section section-light">
-    <!-- wave top from dark -->
-    <div class="wave wave-top wave-from-dark" aria-hidden="true">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985,66.28c-77.67,17.39-161.22,12.89-242,-3.6C620.82,40.43,546,0,451,0S281.11,40.43,158,63.68C103.78,75.82,47.89,68.29,0,46.29V120H1200V0C1120,15.76,1055,50.89,985,66.28Z"></path></svg>
-    </div>
-
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="section">
     <div class="inner">
       <h2>Projects</h2>
       <div class="grid proj-grid">
-        <article class="card proj">
-          <h3>Generative AI Copilot</h3>
-          <p>Integrated ML endpoints to automate intelligent prompt-based workflows for Microsoft Factory US at Confiz, improving campaign insights and personalization.</p>
+
+        <!-- Modern Projects -->
+        <div class="card proj">
+          <h3><i class="fa-solid fa-robot"></i> Generative AI Copilot</h3>
+          <p>Integrated ML endpoints to automate prompt-based workflows for Microsoft Factory US at Confiz,
+          improving campaign insights and personalization.</p>
           <div class="tags"><span>Azure</span><span>LangChain</span><span>Python</span></div>
-        </article>
-        <article class="card proj">
-          <h3>Data Enrichment Utility</h3>
-          <p>Built an end-to-end pipeline enriching cookie & geo data with U.S. Census to enhance audience targeting accuracy and segmentation quality.</p>
+        </div>
+
+        <div class="card proj">
+          <h3><i class="fa-solid fa-database"></i> Data Enrichment Utility</h3>
+          <p>Built an end-to-end pipeline enriching cookie &amp; geo data with U.S. Census datasets to enhance
+          audience targeting and segmentation quality.</p>
           <div class="tags"><span>Databricks</span><span>PySpark</span><span>SQL</span></div>
-        </article>
-        <article class="card proj">
-          <h3>ML-Powered Audience Insights</h3>
-          <p>Developed predictive models to analyze engagement trends and optimize user cohorts; boosted insight quality for marketing analytics teams.</p>
+        </div>
+
+        <div class="card proj">
+          <h3><i class="fa-solid fa-chart-line"></i> ML-Powered Audience Insights</h3>
+          <p>Developed predictive models to analyze engagement trends and optimize user cohorts for marketing analytics teams.</p>
           <div class="tags"><span>XGBoost</span><span>sklearn</span><span>Power BI</span></div>
-        </article>
+        </div>
+
+        <!-- Research Projects -->
+        <div class="card proj">
+          <h3><i class="fa-solid fa-flask"></i> Predictive Failure Modeling for Hydrogen Powertrain Components</h3>
+          <p>Built predictive model in Python using scikit-learn to assess failure risks and simulate cloud deployment with PySpark &amp; Azure.</p>
+          <div class="tags"><span>Python</span><span>scikit-learn</span><span>PySpark</span><span>Azure</span></div>
+        </div>
+
+        <div class="card proj">
+          <h3><i class="fa-solid fa-gears"></i> Optimization and Analysis of Seamless Rocket Motor Tubes</h3>
+          <p>Designed simulation model using ANSYS &amp; MATLAB improving structural performance by 15% and achieving 10% weight reduction.</p>
+          <div class="tags"><span>ANSYS</span><span>MATLAB</span><span>FEA</span><span>Simulation</span></div>
+        </div>
+
+        <div class="card proj">
+          <h3><i class="fa-solid fa-rocket"></i> Modeling and Analysis of Milan 2T Missile Fin</h3>
+          <p>Developed 3D CAD models using CATIA &amp; ANSYS, enhancing flight stability and reducing design iterations by 15%.</p>
+          <div class="tags"><span>CATIA</span><span>ANSYS</span><span>MATLAB</span><span>FEA</span></div>
+        </div>
       </div>
     </div>
-
-    <button class="scroll-down corner" onclick="scrollToSection('journey')" aria-label="Scroll Down">↓</button>
-
-    <!-- wave bottom to dark -->
-    <div class="wave wave-bottom wave-to-dark" aria-hidden="true">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
-    </div>
+    <button class="scroll-down" onclick="scrollToSection('journey')">↓</button>
   </section>
 
-  <!-- ===== JOURNEY (Slide 5 – Deep Blue) ===== -->
-  <section id="journey" class="section section-dark">
-    <!-- wave top from light -->
-    <div class="wave wave-top wave-from-light" aria-hidden="true">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985,66.28c-77.67,17.39-161.22,12.89-242,-3.6C620.82,40.43,546,0,451,0S281.11,40.43,158,63.68C103.78,75.82,47.89,68.29,0,46.29V120H1200V0C1120,15.76,1055,50.89,985,66.28Z"></path></svg>
-    </div>
-
+  <!-- ===== JOURNEY SECTION ===== -->
+  <section id="journey" class="section">
     <div class="inner">
       <h2>My Journey</h2>
-      <div class="timeline">
-        <!-- Latest (top) -->
-        <div class="tl-item right">
-          <h4>Data & AI Engineer — Confiz (Microsoft Factory US)</h4>
-          <p>Built ML-integrated APIs and intelligent data solutions leveraging Databricks, Azure, and modern GenAI frameworks.</p>
-        </div>
-        <div class="tl-item left">
-          <h4>Master of Science — Information Sciences & Systems (Trine University)</h4>
-          <p>Specialized in ML, data engineering, and cloud analytics; designed end-to-end pipelines and delivered BI outcomes with Power BI and SQL.</p>
-        </div>
-        <div class="tl-item right">
-          <h4>Software Engineer — Krithi Cubersoft</h4>
-          <p>Developed backend components and REST APIs; integrated analytics modules to improve performance and scalability.</p>
-        </div>
-        <!-- Earliest (bottom) -->
-        <div class="tl-item left">
-          <h4>Bachelor’s in Mechanical Engineering (BDL Projects)</h4>
-          <p>Projects on optimization & analysis of seamless rocket motor tubes and Milan 2T missile fin modeling.</p>
-        </div>
-      </div>
+      <ul class="timeline">
+        <li><b>2025 – Present:</b> Data &amp; AI Engineer at Confiz – Microsoft Factory US</li>
+        <li><b>2023 – 2025:</b> Master’s in Information Science &amp; Systems – Trine University (USA)</li>
+        <li><b>2019 – 2022:</b> Software Engineer – Krithi Cubersoft & Others</li>
+        <li><b>2015 – 2019:</b> Bachelor’s in Mechanical Engineering – JNTU Hyderabad</li>
+      </ul>
     </div>
-
-    <button class="scroll-down corner" onclick="scrollToSection('contact')" aria-label="Scroll Down">↓</button>
-
-    <!-- wave bottom to light -->
-    <div class="wave wave-bottom wave-to-light" aria-hidden="true">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
-    </div>
+    <button class="scroll-down" onclick="scrollToSection('contact')">↓</button>
   </section>
 
-  <!-- ===== CONTACT (Slide 6 – Mist) ===== -->
-  <section id="contact" class="section section-light">
-    <!-- wave top from dark -->
-    <div class="wave wave-top wave-from-dark" aria-hidden="true">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985,66.28c-77.67,17.39-161.22,12.89-242,-3.6C620.82,40.43,546,0,451,0S281.11,40.43,158,63.68C103.78,75.82,47.89,68.29,0,46.29V120H1200V0C1120,15.76,1055,50.89,985,66.28Z"></path></svg>
-    </div>
-
-    <div class="inner">
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section">
+    <div class="inner contact">
       <h2>Contact</h2>
-      <form class="contact-form" id="contactForm">
-        <input type="text" id="name" placeholder="Full Name" required />
-        <input type="email" id="email" placeholder="Email Address" required />
-        <textarea id="message" rows="5" placeholder="Message"></textarea>
-        <button type="submit" class="btn primary">Send</button>
-      </form>
-
-      <div class="social">
-        <a target="_blank" href="https://github.com/Lokesh0814" aria-label="GitHub">GitHub</a>
-        <a target="_blank" href="https://www.linkedin.com/in/lokesh-reddy-a1a14731a/" aria-label="LinkedIn">LinkedIn</a>
-        <a href="mailto:your.email@example.com" aria-label="Email">Email</a>
-      </div>
-    </div>
-
-    <!-- wave bottom END (no next section in this page, but keeps symmetry) -->
-    <div class="wave wave-bottom wave-to-dark end" aria-hidden="true">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.89,22,103.78,29.53,158,17.39C281.11,40.43,356,0,451,0S620.82,40.43,743,63.68C823.78,79.17,907.33,83.67,985,66.28c70-15.39,135-50.52,215-66.28V0Z"></path></svg>
+      <p>📧 lokeshreddy0814@gmail.com     📍 Texas, USA</p>
+      <p class="footer">Crafted with precision by Lokesh Reddy Thipparthi</p>
     </div>
   </section>
 
-  <footer class="footer">
-    <p>Crafted with precision by Lokesh Reddy Thipparthi</p>
-  </footer>
-
-  <!-- Scripts -->
   <script src="assets/js/script.js"></script>
 </body>
 </html>
