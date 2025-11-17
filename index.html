@@ -153,47 +153,40 @@ From architecting ETL pipelines and optimizing multivariate models to deploying 
     <button class="scroll-down" onclick="scrollToSection('journey')">↓</button>
   </section>
 
-  <section id="journey" class="section">
-  <h2 class="journey-title">My Journey</h2>
+ <section id="journey" class="section journey-section">
+  <div class="inner">
 
-  <div class="flight-container">
+    <h2>My Journey</h2>
 
-    <!-- Flight Path SVG -->
-    <svg class="flight-path" viewBox="0 0 300 800">
-      <path id="journeyPath"
-        d="M150 780 
-           C 150 600, 80 550, 150 450
-           C 220 350, 220 250, 150 150
-           C 80 70, 150 40, 150 20"
-        stroke="#00eaff"
-        stroke-width="3"
-        fill="none"
-        stroke-linecap="round"
-        stroke-dasharray="10 10" />
-    </svg>
+    <div class="flight-container">
 
-    <!-- Animated Plane -->
-    <img src="assets/images/plane.png" class="plane" id="plane" />
+      <!-- Flight Path Line -->
+      <div class="flight-path"></div>
 
-    <!-- Journey Labels -->
-    <div class="milestone m1">
-      <h3>Data & AI Engineer</h3>
-      <p>Confiz – Microsoft Factory US<br>2025 – Present</p>
-    </div>
+      <!-- Airplane -->
+      <img src="assets/images/plane.png" alt="plane" class="plane" />
 
-    <div class="milestone m2">
-      <h3>Master’s in Information Science & Systems</h3>
-      <p>Trine University – USA<br>2023 – 2025</p>
-    </div>
+      <!-- Timeline Items -->
+      <div class="milestone" data-year="2015 – 2019">
+        <h3>Bachelor’s in Mechanical Engineering – JNTU Hyderabad</h3>
+        <p>Graduated with hands-on exposure to engineering design, simulation, and analytical problem-solving.</p>
+      </div>
 
-    <div class="milestone m3">
-      <h3>Software Engineer</h3>
-      <p>Krithi Cubersoft & Others<br>2019 – 2022</p>
-    </div>
+      <div class="milestone" data-year="2019 – 2022">
+        <h3>Software Engineer – Krithi Cubersoft & Others</h3>
+        <p>Worked on backend systems, automation, and scalable application development.</p>
+      </div>
 
-    <div class="milestone m4">
-      <h3>Bachelor’s in Mechanical Engineering</h3>
-      <p>JNTU Hyderabad<br>2015 – 2019</p>
+      <div class="milestone" data-year="2023 – 2025">
+        <h3>Master’s in Information Science & Systems – Trine University (USA)</h3>
+        <p>Specialized in Data Engineering, AI systems, cloud technologies, and enterprise-scale analytics.</p>
+      </div>
+
+      <div class="milestone" data-year="2025 – Present">
+        <h3>Data & AI Engineer – Confiz / Microsoft Factory US</h3>
+        <p>Building end-to-end ML systems, RAG pipelines, and scalable data solutions driving business performance.</p>
+      </div>
+
     </div>
 
   </div>
