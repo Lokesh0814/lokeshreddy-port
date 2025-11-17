@@ -153,19 +153,65 @@ From architecting ETL pipelines and optimizing multivariate models to deploying 
     <button class="scroll-down" onclick="scrollToSection('journey')">↓</button>
   </section>
 
-  <!-- ===== JOURNEY SECTION ===== -->
-  <section id="journey" class="section">
-    <div class="inner">
-      <h2>My Journey</h2>
-      <ul class="timeline">
-        <li><b>2025 – Present:</b> Data &amp; AI Engineer at Confiz – Microsoft Factory US</li>
-        <li><b>2023 – 2025:</b> Master’s in Information Science &amp; Systems – Trine University (USA)</li>
-        <li><b>2019 – 2022:</b> Software Engineer – Krithi Cubersoft & Others</li>
-        <li><b>2015 – 2019:</b> Bachelor’s in Mechanical Engineering – JNTU Hyderabad</li>
-      </ul>
+  <!-- ===== JOURNEY (FLIGHT PATH) ===== -->
+<section id="journey" class="section">
+  <div class="inner">
+    <h2 class="section-title">My Journey</h2>
+
+    <div class="flight-container">
+
+      <!-- Flight 🔵 Path -->
+      <svg class="flight-path" viewBox="0 0 400 800">
+        <path id="curvePath"
+          d="M200 780 
+             C 120 650, 280 550, 200 450
+             C 120 350, 280 250, 200 150
+             C 120 80, 200 40, 200 20"
+          stroke="#00eaff"
+          stroke-width="3"
+          fill="transparent"
+          stroke-linecap="round"
+        />
+
+        <!-- Glowing dots on milestones -->
+        <circle cx="200" cy="780" r="8" class="dot"/>
+        <circle cx="200" cy="450" r="8" class="dot"/>
+        <circle cx="200" cy="150" r="8" class="dot"/>
+        <circle cx="200" cy="20"  r="8" class="dot"/>
+      </svg>
+
+      <!-- ✈ Airplane Moving -->
+      <img src="assets/images/plane.png" id="plane" class="plane" />
+
+      <!-- Smoke Trail -->
+      <div id="smokeTrail"></div>
+
+      <!-- Milestones -->
+      <div class="milestone m1">  
+        <h3>🎓 Bachelor's in Mechanical Engineering (2015–2019)</h3>
+        <p>JNTU Hyderabad — built fundamentals in engineering, design, and analytics.</p>
+      </div>
+
+      <div class="milestone m2">  
+        <h3>💻 Software Engineer (2019–2022)</h3>
+        <p>Developed backend systems, automated workflows, and optimized APIs at Krithi Cubersoft.</p>
+      </div>
+
+      <div class="milestone m3">  
+        <h3>🎓 Master’s in Information Science (2023–2025)</h3>
+        <p>Trine University (USA) — specialized in Data Science, ML, Cloud & Generative AI.</p>
+      </div>
+
+      <div class="milestone m4">  
+        <h3>🤖 Data & AI Engineer (2025–Present)</h3>
+        <p>Confiz – Microsoft Factory US: building scalable LLM, ML, and data intelligence systems.</p>
+      </div>
+
     </div>
-    <button class="scroll-down" onclick="scrollToSection('contact')">↓</button>
-  </section>
+  </div>
+
+  <button class="scroll-down" onclick="scrollToSection('contact')">↓</button>
+</section>
 
   <!-- ===== CONTACT SECTION ===== -->
   <section id="contact" class="section">
