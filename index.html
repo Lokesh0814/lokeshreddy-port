@@ -153,38 +153,50 @@ From architecting ETL pipelines and optimizing multivariate models to deploying 
     <button class="scroll-down" onclick="scrollToSection('journey')">↓</button>
   </section>
 
- <section id="journey" class="section journey-section">
+ <section id="journey" class="section journey-path">
   <div class="inner">
-
     <h2>My Journey</h2>
 
-    <div class="flight-container">
+    <div class="path-container">
 
-      <!-- Vertical Line -->
-      <div class="flight-line"></div>
+      <!-- Actual dotted path drawn using SVG -->
+      <svg class="flight-path" viewBox="0 0 1200 600">
+        <path id="path"
+          d="M150 450 
+             C 350 300, 450 300, 600 150
+             C 750 50, 950 150, 1050 250
+             C 1150 350, 900 450, 700 500
+             C 500 550, 300 500, 220 420"
+          stroke="#00eaff"
+          stroke-width="4"
+          stroke-dasharray="12 12"
+          fill="none"
+          stroke-linecap="round"
+        />
+      </svg>
 
-      <!-- Plane -->
-      <img src="assets/images/plane.png" class="plane" alt="plane">
+      <!-- Plane that moves on the dotted path -->
+      <img src="assets/images/plane.png" class="plane-icon" />
 
-      <!-- Milestones -->
-      <div class="milestone" data-year="2015–2019">
-        <h3>Bachelor’s in Mechanical Engineering – JNTU Hyderabad</h3>
-        <p>Built strong fundamentals in engineering design, simulation, and analytical problem-solving.</p>
+      <!-- BUBBLES -->
+      <div class="bubble bubble1">
+        <h3>2015 – 2019</h3>
+        <p>Bachelor’s in Mechanical Engineering – JNTU Hyderabad</p>
       </div>
 
-      <div class="milestone" data-year="2019–2022">
-        <h3>Software Engineer – Krithi Cubersoft & Others</h3>
-        <p>Worked on backend applications, automation, and scalable development across multiple projects.</p>
+      <div class="bubble bubble2">
+        <h3>2019 – 2022</h3>
+        <p>Software Engineer – Krithi Cubersoft & Others</p>
       </div>
 
-      <div class="milestone" data-year="2023–2025">
-        <h3>Master’s in Information Science & Systems – Trine University</h3>
-        <p>Specialized in AI, data engineering, and cloud technologies for large-scale enterprise systems.</p>
+      <div class="bubble bubble3">
+        <h3>2023 – 2025</h3>
+        <p>Master’s in Information Science & Systems – Trine University (USA)</p>
       </div>
 
-      <div class="milestone" data-year="2025–Present">
-        <h3>Data & AI Engineer – Confiz (Microsoft Factory US)</h3>
-        <p>Building end-to-end ML systems, RAG pipelines, and scalable AI solutions powering business decisions.</p>
+      <div class="bubble bubble4">
+        <h3>2025 – Present</h3>
+        <p>Data & AI Engineer – Confiz (Microsoft Factory US)</p>
       </div>
 
     </div>
