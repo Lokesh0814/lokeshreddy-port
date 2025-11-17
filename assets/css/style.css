@@ -173,58 +173,68 @@ padding:5px 13px;font-size:.85rem;color:var(--neon);}
   0%, 100% { opacity: 0.4; }
   50% { opacity: 1; }
 }
-/* Journey Flight Path */
+/* Journey Section */
 .journey-path {
-  position: relative;
   text-align: center;
-  overflow: hidden;
-  padding-top: 120px;
+  padding-top: 80px;
+  position: relative;
 }
 
+/* Path Container */
 .path-container {
   position: relative;
   width: 100%;
-  height: 600px;
-  margin: 0 auto;
+  height: 550px;
+  margin: 120px auto 0 auto;
 }
 
+/* Dotted Path */
 .flight-path {
-  position: absolute;
   width: 100%;
-  height: 600px;
+  height: 100%;
+  position: absolute;
+  top: 0; 
   left: 0;
-  top: 0;
+  z-index: 1;
 }
 
+/* Bubble Boxes */
 .bubble {
   position: absolute;
   width: 260px;
   padding: 15px;
-  border-radius: 50%;
+  border-radius: 25px; /* Oval shape, not circle */
   background: rgba(0, 255, 255, 0.07);
   border: 2px solid #00eaff;
   color: white;
   text-align: center;
   font-size: 0.9rem;
   box-shadow: 0 0 15px #00eaff55;
+  z-index: 10;
 }
 
-/* Position bubbles EXACTLY like your drawing */
-.bubble1 { top: 420px; left: 80px; }
-.bubble2 { top: 200px; left: 430px; }
-.bubble3 { top: 70px;  left: 820px; }
-.bubble4 { top: 330px; left: 920px; }
+/* Bubble Positions (Fixed & non-overlapping) */
+.bubble1 { top: 360px; left: 80px; }
+.bubble2 { top: 170px; left: 430px; }
+.bubble3 { top: 60px;  left: 820px; }
+.bubble4 { top: 320px; left: 1080px; }
 
-/* Plane animation following path */
+/* Plane Image */
 .plane-icon {
-  width: 60px;
+  width: 90px !important;
   position: absolute;
-  offset-path: path("M150 450 C 350 300, 450 300, 600 150 C 750 50, 950 150, 1050 250 C 1150 350, 900 450, 700 500 C 500 550, 300 500, 220 420");
-  animation: flyPlane 9s linear infinite;
+  z-index: 20;
+  offset-path: path("M150 420 
+                     C 350 300, 450 300, 600 160
+                     C 750 60, 950 160, 1080 260
+                     C 1150 320, 950 420, 700 480
+                     C 500 520, 300 480, 200 390");
+  offset-rotate: auto;
+  animation: flyPlane 10s linear infinite;
 }
 
+/* Plane Animation */
 @keyframes flyPlane {
-  0% { offset-distance: 0%; transform: rotate(0deg); }
-  50% { transform: rotate(10deg); }
-  100% { offset-distance: 100%; transform: rotate(0deg); }
+  0%   { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
 }
