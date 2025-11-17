@@ -173,85 +173,58 @@ padding:5px 13px;font-size:.85rem;color:var(--neon);}
   0%, 100% { opacity: 0.4; }
   50% { opacity: 1; }
 }
-/* ===================================
-   JOURNEY SECTION (STABLE VERSION)
-   ===================================*/
-
-.journey-section {
-  background: #000;
+/* Journey Flight Path */
+.journey-path {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
   padding-top: 120px;
-  padding-bottom: 120px;
-  position: relative;
-  z-index: 1;
 }
 
-.flight-container {
+.path-container {
   position: relative;
+  width: 100%;
+  height: 600px;
   margin: 0 auto;
-  height: 700px;   /* FIXED height ensures no collapsing */
-  width: 85%;
-  max-width: 900px;
 }
 
-/* Glowing vertical line */
-.flight-line {
+.flight-path {
   position: absolute;
-  left: 50%;
+  width: 100%;
+  height: 600px;
+  left: 0;
   top: 0;
-  height: 100%;
-  width: 4px;
-  background: linear-gradient(#00eaff, #00ffc6);
-  transform: translateX(-50%);
-  box-shadow: 0 0 20px #00eaff;
-  border-radius: 10px;
 }
 
-/* Plane Image */
-.plane {
+.bubble {
   position: absolute;
-  width: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: planeMove 12s linear infinite;
-  z-index: 5;
+  width: 260px;
+  padding: 15px;
+  border-radius: 50%;
+  background: rgba(0, 255, 255, 0.07);
+  border: 2px solid #00eaff;
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: 0 0 15px #00eaff55;
 }
 
-/* Plane moves up cleanly */
-@keyframes planeMove {
-  0%   { top: 100%; opacity: 0; }
-  10%  { opacity: 1; }
-  90%  { opacity: 1; }
-  100% { top: -5%; opacity: 0; }
-}
+/* Position bubbles EXACTLY like your drawing */
+.bubble1 { top: 420px; left: 80px; }
+.bubble2 { top: 200px; left: 430px; }
+.bubble3 { top: 70px;  left: 820px; }
+.bubble4 { top: 330px; left: 920px; }
 
-/* Milestones */
-.milestone {
-  position: relative;
-  width: 60%;
-  margin: 70px auto;
-  text-align: left;
-  color: #d7faff;
-}
-
-.milestone h3 {
-  font-family: 'Orbitron', sans-serif;
-  color: #00eaff;
-  margin-bottom: 6px;
-}
-
-.milestone p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #9bd3e8;
-}
-
-/* Year Labels */
-.milestone::before {
-  content: attr(data-year);
+/* Plane animation following path */
+.plane-icon {
+  width: 60px;
   position: absolute;
-  left: -120px;
-  top: 0;
-  font-family: 'Orbitron', sans-serif;
-  color: #00ffc6;
-  font-size: 1rem;
+  offset-path: path("M150 450 C 350 300, 450 300, 600 150 C 750 50, 950 150, 1050 250 C 1150 350, 900 450, 700 500 C 500 550, 300 500, 220 420");
+  animation: flyPlane 9s linear infinite;
+}
+
+@keyframes flyPlane {
+  0% { offset-distance: 0%; transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+  100% { offset-distance: 100%; transform: rotate(0deg); }
 }
