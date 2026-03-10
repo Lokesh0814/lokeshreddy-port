@@ -1,221 +1,606 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lokesh Reddy Thipparthi — Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" href="assets/images/logo.png" />
-  <script src="https://kit.fontawesome.com/8b0e1a1d2c.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-</head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lokesh Reddy Thipparthi — AI/ML Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#07090f;--bg2:#0c0f1a;
+      --c1:#ff6b6b;--c2:#ffd93d;--c3:#6bcb77;--c4:#4d96ff;--c5:#c77dff;
+      --text:#f0f2ff;--muted:#7b82a0;
+      --card:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);
+    }
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;overflow-x:hidden}
 
+    /* PARTICLES */
+    #particles{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+    /* MESH */
+    .mesh{position:fixed;inset:0;z-index:0;pointer-events:none;
+      background:
+        radial-gradient(ellipse 60% 50% at 10% 20%,rgba(255,107,107,0.07) 0%,transparent 60%),
+        radial-gradient(ellipse 50% 60% at 90% 80%,rgba(77,150,255,0.07) 0%,transparent 60%),
+        radial-gradient(ellipse 40% 40% at 50% 50%,rgba(199,125,255,0.04) 0%,transparent 70%)}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;
+      padding:1.2rem 5%;background:rgba(7,9,15,0.8);backdrop-filter:blur(24px);
+      border-bottom:1px solid var(--border);transition:padding 0.3s}
+    .nav-logo{font-weight:800;font-size:1.1rem;background:linear-gradient(135deg,var(--c1),var(--c2));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none}
+    .nav-links{display:flex;gap:0.3rem;align-items:center}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.82rem;font-weight:500;
+      padding:0.45rem 0.9rem;border-radius:8px;transition:color 0.2s,background 0.2s}
+    .nav-links a:hover{color:var(--text);background:var(--card)}
+    .nav-resume{background:linear-gradient(135deg,var(--c1),var(--c5)) !important;
+      color:white !important;font-weight:700 !important;border-radius:8px}
+
+    /* HERO */
+    #hero{min-height:100vh;display:flex;align-items:center;padding:7rem 5% 5rem;position:relative;z-index:1}
+    .hero-inner{max-width:1100px;margin:0 auto;width:100%}
+    .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;
+      background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.25);
+      border-radius:100px;padding:0.35rem 1rem;font-size:0.78rem;font-weight:600;color:var(--c1);
+      letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.8rem;animation:fadeUp 0.8s ease both}
+    .pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--c1);animation:pulse 1.8s infinite}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,107,0.6)}50%{box-shadow:0 0 0 6px rgba(255,107,107,0)}}
+    .hero-name{font-size:clamp(3rem,7vw,6rem);font-weight:800;line-height:1.0;letter-spacing:-0.04em;
+      margin-bottom:0.5rem;animation:fadeUp 0.9s 0.1s ease both}
+    .hero-name .grad{background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200%;animation:gradShift 4s linear infinite}
+    @keyframes gradShift{0%{background-position:0%}100%{background-position:200%}}
+    .hero-tw{font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:500;color:var(--muted);
+      margin-bottom:1.5rem;min-height:2.2rem;animation:fadeUp 0.9s 0.2s ease both}
+    .tw-text{color:var(--c4);font-weight:700}
+    .tw-cur{display:inline-block;width:2px;height:1.2em;background:var(--c4);margin-left:2px;
+      vertical-align:middle;animation:blink 0.8s step-end infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+    .hero-desc{font-size:1.05rem;line-height:1.85;color:#8892b5;max-width:580px;margin-bottom:2.5rem;animation:fadeUp 0.9s 0.3s ease both}
+    .hero-desc strong{color:var(--text);font-weight:600}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;animation:fadeUp 0.9s 0.4s ease both}
+    .btn-glow{background:linear-gradient(135deg,var(--c4),var(--c5));color:white;padding:0.85rem 2.2rem;
+      border-radius:12px;text-decoration:none;font-weight:700;font-size:0.95rem;
+      box-shadow:0 0 30px rgba(77,150,255,0.3);transition:all 0.2s;display:inline-block}
+    .btn-glow:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(77,150,255,0.5)}
+    .btn-out{background:transparent;border:1.5px solid var(--border);color:var(--text);
+      padding:0.85rem 2.2rem;border-radius:12px;text-decoration:none;font-weight:600;
+      font-size:0.95rem;transition:all 0.2s;display:inline-block}
+    .btn-out:hover{border-color:var(--c5);color:var(--c5);transform:translateY(-3px)}
+    .hero-stats{display:flex;gap:3rem;flex-wrap:wrap;padding-top:2.5rem;
+      border-top:1px solid var(--border);animation:fadeUp 0.9s 0.5s ease both}
+    .stat-num{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,var(--c2),var(--c1));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+    .stat-lbl{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.2rem}
+    .scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+      display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+      color:var(--muted);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;
+      animation:fadeUp 1s 1s ease both;z-index:2}
+    .scroll-arrow{width:20px;height:30px;border:1.5px solid var(--border);border-radius:10px;
+      display:flex;align-items:flex-start;justify-content:center;padding-top:5px}
+    .scroll-arrow::after{content:'';width:3px;height:6px;background:var(--c4);border-radius:3px;animation:bob 1.5s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(8px);opacity:0.3}}
+
+    /* SECTIONS */
+    .section{position:relative;z-index:1;padding:6rem 5%}
+    .s-inner{max-width:1100px;margin:0 auto}
+    .sec-tag{font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.6rem}
+    .sec-title{font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:3rem;line-height:1.1}
+    .sec-title em{font-style:normal;color:var(--muted)}
+
+    /* ABOUT */
+    #about{background:var(--bg2)}
+    .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:start}
+    .about-text p{font-size:1rem;line-height:1.9;color:#8892b5;margin-bottom:1.1rem}
+    .about-text strong{color:var(--text);font-weight:600}
+    .hl{display:block;background:linear-gradient(90deg,rgba(77,150,255,0.15),rgba(199,125,255,0.15));
+      border-left:3px solid var(--c4);border-radius:0 8px 8px 0;padding:0.9rem 1.2rem;
+      margin:1rem 0;font-size:0.95rem;color:var(--text);font-weight:500;line-height:1.6}
+    .cert-grid{display:flex;flex-direction:column;gap:0.7rem}
+    .cert-label{font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem}
+    .cert-card{background:var(--card);border:1px solid var(--border);border-radius:12px;
+      padding:1rem 1.2rem;display:flex;align-items:center;gap:1rem;transition:all 0.25s;cursor:default}
+    .cert-card:hover{border-color:rgba(255,107,107,0.4);background:rgba(255,107,107,0.06);transform:translateX(6px)}
+    .cert-emoji{font-size:1.4rem}
+    .cert-info{flex:1}
+    .cert-name{font-size:0.88rem;font-weight:600;color:var(--text)}
+    .cert-issuer{font-size:0.75rem;color:var(--muted);margin-top:0.15rem}
+    .cert-pill{font-size:0.65rem;font-weight:700;letter-spacing:0.08em;padding:0.25rem 0.65rem;
+      border-radius:100px;text-transform:uppercase;background:rgba(255,107,107,0.12);
+      color:var(--c1);border:1px solid rgba(255,107,107,0.25)}
+
+    /* SKILLS */
+    #skills{background:var(--bg)}
+    .skill-cats{display:flex;flex-direction:column;gap:2.5rem}
+    .sg-title{font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem}
+    .chips{display:flex;flex-wrap:wrap;gap:0.6rem}
+    .chip{padding:0.55rem 1.1rem;border-radius:100px;font-size:0.82rem;font-weight:600;
+      border:1.5px solid transparent;cursor:default;transition:all 0.2s}
+    .chip:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 8px 25px rgba(0,0,0,0.4)}
+    .c1{background:rgba(255,107,107,0.12);border-color:rgba(255,107,107,0.25);color:var(--c1)}
+    .c2{background:rgba(255,217,61,0.12);border-color:rgba(255,217,61,0.25);color:var(--c2)}
+    .c3{background:rgba(107,203,119,0.12);border-color:rgba(107,203,119,0.25);color:var(--c3)}
+    .c4{background:rgba(77,150,255,0.12);border-color:rgba(77,150,255,0.25);color:var(--c4)}
+    .c5{background:rgba(199,125,255,0.12);border-color:rgba(199,125,255,0.25);color:var(--c5)}
+
+    /* EXPERIENCE */
+    #experience{background:var(--bg2)}
+    .exp-item{display:grid;grid-template-columns:180px 1fr;gap:0 2.5rem;position:relative;margin-bottom:0}
+    .exp-item::before{content:'';position:absolute;left:180px;top:0;bottom:0;width:1px;
+      background:linear-gradient(to bottom,transparent,var(--border) 10%,var(--border) 90%,transparent)}
+    .exp-left{text-align:right;padding:2rem 0;position:relative}
+    .exp-dot{position:absolute;right:-8px;top:2.4rem;width:15px;height:15px;border-radius:50%;
+      border:2.5px solid var(--c4);background:var(--bg);z-index:2;transition:all 0.3s}
+    .exp-item:hover .exp-dot{background:var(--c4);box-shadow:0 0 15px rgba(77,150,255,0.6)}
+    .exp-date{font-size:0.78rem;font-weight:700;color:var(--c4);letter-spacing:0.05em;margin-bottom:0.3rem}
+    .exp-city{font-size:0.82rem;color:var(--muted);font-weight:500}
+    .exp-right{padding:2rem 0 2rem 2.5rem}
+    .exp-role{font-size:1.15rem;font-weight:800;margin-bottom:0.2rem}
+    .exp-org{font-size:0.85rem;color:var(--muted);margin-bottom:1rem;font-style:italic}
+    .exp-bullets{list-style:none;display:flex;flex-direction:column;gap:0.65rem}
+    .exp-bullets li{font-size:0.9rem;line-height:1.7;color:#8892b5;padding-left:1.3rem;position:relative}
+    .exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--c4);font-size:0.8rem;top:0.15rem}
+    .exp-bullets strong{color:var(--text);font-weight:600}
+    .exp-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem}
+    .etag{font-size:0.7rem;font-weight:600;padding:0.2rem 0.7rem;border-radius:100px;
+      background:rgba(77,150,255,0.1);border:1px solid rgba(77,150,255,0.2);color:var(--c4)}
+
+    /* PROJECTS */
+    #projects{background:var(--bg)}
+    .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+    .proj-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2rem;
+      transition:all 0.3s;transform-style:preserve-3d;cursor:default;position:relative;overflow:hidden}
+    .proj-card:hover{border-color:rgba(255,255,255,0.15);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+    .proj-glow{position:absolute;width:200px;height:200px;border-radius:50%;filter:blur(60px);
+      opacity:0;transition:opacity 0.4s;pointer-events:none;top:-50px;right:-50px}
+    .proj-card:hover .proj-glow{opacity:0.5}
+    .proj-num{font-size:3.5rem;font-weight:800;opacity:0.06;position:absolute;top:1rem;right:1.5rem;letter-spacing:-0.05em}
+    .proj-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;
+      justify-content:center;font-size:1.5rem;margin-bottom:1.3rem}
+    .proj-title{font-size:1.05rem;font-weight:800;margin-bottom:0.7rem;letter-spacing:-0.02em}
+    .proj-desc{font-size:0.87rem;line-height:1.75;color:#6e7590;margin-bottom:1.3rem}
+    .proj-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+    .ptag{font-size:0.7rem;font-weight:600;padding:0.25rem 0.75rem;border-radius:100px}
+
+    /* JOURNEY */
+    #journey{background:var(--bg2)}
+    .j-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+    .j-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.8rem;
+      transition:all 0.25s;position:relative;overflow:hidden}
+    .j-card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,0.15)}
+    .j-bar{position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0}
+    .j-year{font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem}
+    .j-role{font-size:1rem;font-weight:800;margin-bottom:0.25rem}
+    .j-place{font-size:0.85rem;color:var(--muted);margin-bottom:0.8rem}
+    .j-desc{font-size:0.83rem;color:#6e7590;line-height:1.7}
+
+    /* CONTACT */
+    #contact{background:var(--bg);text-align:center}
+    .contact-inner{max-width:600px;margin:0 auto}
+    .contact-h{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:1.2rem;line-height:1}
+    .contact-h .grad{background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      background-size:300%;animation:gradShift 4s linear infinite}
+    .contact-sub{font-size:1rem;color:var(--muted);margin-bottom:2.5rem;line-height:1.7}
+    .clinks{display:flex;justify-content:center;gap:0.8rem;flex-wrap:wrap}
+    .clink{display:flex;align-items:center;gap:0.6rem;padding:0.85rem 1.6rem;border-radius:12px;
+      text-decoration:none;font-size:0.9rem;font-weight:600;border:1.5px solid var(--border);
+      color:var(--text);background:var(--card);transition:all 0.2s}
+    .clink:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(0,0,0,0.4)}
+    .clink.em:hover{border-color:var(--c1);color:var(--c1);background:rgba(255,107,107,0.08)}
+    .clink.li:hover{border-color:var(--c4);color:var(--c4);background:rgba(77,150,255,0.08)}
+    .clink.gh:hover{border-color:var(--c5);color:var(--c5);background:rgba(199,125,255,0.08)}
+    .clink.rs:hover{border-color:var(--c2);color:var(--c2);background:rgba(255,217,61,0.08)}
+
+    footer{text-align:center;padding:2rem 5%;border-top:1px solid var(--border);font-size:0.78rem;color:var(--muted);position:relative;z-index:1}
+
+    /* ANIMATIONS */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .reveal{opacity:0;transform:translateY(35px);transition:opacity 0.7s ease,transform 0.7s ease}
+    .reveal.in{opacity:1;transform:translateY(0)}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      nav{padding:1rem 4%}
+      .nav-links a:not(.nav-resume){display:none}
+      .about-grid{grid-template-columns:1fr}
+      .exp-item{grid-template-columns:1fr}
+      .exp-item::before,.exp-dot{display:none}
+      .exp-left{text-align:left;padding:1.5rem 0 0}
+      .exp-right{padding:0.5rem 0 2rem}
+      .j-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:600px){.hero-stats{gap:1.5rem}.proj-grid{grid-template-columns:1fr}}
+  </style>
+</head>
 <body>
 
-  <!-- LOADING SCREEN -->
-  <div id="loader">
-    <h2>Loading<span class="dots">...</span></h2>
+<canvas id="particles"></canvas>
+<div class="mesh"></div>
+
+<!-- NAV -->
+<nav id="mainnav">
+  <a href="#hero" class="nav-logo">LRT ✦</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+    <a href="#" class="nav-resume" onclick="return false">Resume ↗</a>
   </div>
+</nav>
 
-  <!-- HEADER -->
-  <header class="header">
-    <a href="#" class="logo" id="reloadLogo">LR</a>
-    <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#journey">Journey</a>
-      <a href="#contact">Contact</a>
-      <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" target="_blank" class="resume-btn">Resume</a>
-    </nav>
-  </header>
-
-  <!-- ===== HERO SECTION ===== -->
- <!-- ===== HERO SECTION ===== -->
-<section id="home" class="section home-section">
-  <div class="inner home-grid">
-    <div class="home-left">
-      <h1>Hi, I'm <span class="highlight">Lokesh Reddy Thipparthi</span></h1>
-      <h2 class="typewriter" id="typewriter"></h2>
-
-      <p class="intro">
-        Passionate <b>Data & AI Engineer</b> with expertise in <b>Python</b>, <b>PySpark</b>, and <b>Databricks</b>,
-        building intelligent systems that drive performance, insights, and innovation.
-      </p>
-
-      <div class="buttons">
-        <a href="assets/Lokesh_Thipparthi_cummins_Data_and_AI_Engineer.pdf" target="_blank" class="btn">View Resume</a>
-        <a href="#contact" class="btn-outline">Contact Me</a>
-      </div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="pulse-dot"></span>Open to AI/ML &amp; Data Roles — Frisco, TX</div>
+    <h1 class="hero-name"><span class="grad">Lokesh Reddy</span><br>Thipparthi</h1>
+    <p class="hero-tw"><span class="tw-text" id="tw"></span><span class="tw-cur"></span></p>
+    <p class="hero-desc">
+      <strong>AI/ML Engineer &amp; Data Scientist</strong> with 4+ years building production-grade intelligent systems.
+      From <strong>MLOps pipelines</strong> to <strong>Generative AI &amp; RAG</strong> — turning complex data into measurable business impact.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-glow">View My Work</a>
+      <a href="#contact" class="btn-out">Let's Connect →</a>
     </div>
-
-    <div class="home-right">
-      <img src="assets/images/profile.jpg" alt="Lokesh Reddy Thipparthi" class="profile-pic" />
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">4+</div><div class="stat-lbl">Years Experience</div></div>
+      <div class="stat"><div class="stat-num">40%</div><div class="stat-lbl">Training Time Reduced</div></div>
+      <div class="stat"><div class="stat-num">60%</div><div class="stat-lbl">Latency Cut</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Certifications</div></div>
     </div>
   </div>
-  <button class="scroll-down" onclick="scrollToSection('about')">↓</button>
+  <div class="scroll-hint"><div class="scroll-arrow"></div><span>Scroll</span></div>
 </section>
 
-  <!-- ===== ABOUT SECTION ===== -->
-  <section id="about" class="section">
-    <div class="inner about-grid">
-      <div class="about-left">
-        <h2>About Me</h2>
-        <ul>
-          <li>💡 4+ Years Experience in Data & AI Engineering</li>
-          <li>⚙️ Strong expertise in Python, SQL, Databricks, and Azure — enabling end-to-end data engineering, machine learning, and AI-driven analytics.</li>
-          <li>📊 Skilled in building ML pipelines and analytics</li>
-          <li>🏆 Databricks Certified Generative AI Engineer</li>
-          <li>🏆 Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</li>
-          <li>🏆 Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</li>
-        </ul>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="s-inner">
+    <p class="sec-tag reveal" style="color:var(--c1)">Who I Am</p>
+    <h2 class="sec-title reveal">About <em>Me</em></h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a <strong>Machine Learning &amp; AI Engineer</strong> with 4+ years of hands-on experience delivering end-to-end ML solutions across data science, MLOps, and Generative AI. Currently at <strong>SPR Software Systems &amp; Implementation</strong> — deployed via Confiz, contributing to <strong>Microsoft Factory US</strong>.</p>
+        <span class="hl">💡 Specialized in MLOps, Generative AI (RAG), NLP, anomaly detection, and cloud-native pipeline architecture on AWS, GCP, and Azure.</span>
+        <p>Previously at <strong>Krithi Cybersoft Pvt. Ltd.</strong> in Hyderabad, I engineered scalable ETL pipelines and fine-tuned deep learning models for fraud detection and risk assessment — improving F1-scores by 14.6% and boosting prediction accuracy by 15% in production.</p>
+        <p>I hold a <strong>Master's in Information Sciences &amp; Systems</strong> from Trine University, USA, and I'm passionate about deploying AI responsibly and at scale.</p>
       </div>
-      <div class="about-right">
-        <h3>Transforming Data into Intelligence</h3>
-        <p>
-          I build scalable, cloud-native data solutions that transform raw datasets into actionable insights, empowering organizations to make data-driven decisions with confidence.
-          </p>
-        <p>
-With 3+ years of experience across enterprise-grade analytics and AI deployments, I specialize in designing end-to-end pipelines for predictive modeling, recommendation systems, and real-time data processing. My expertise spans Databricks, Azure ML, and Generative AI frameworks, enabling me to deliver intelligent copilots and automation solutions that drive measurable business outcomes.
-          </p>
-        <p>
-From architecting ETL pipelines and optimizing multivariate models to deploying interactive dashboards and cloud-integrated ML workflows, I bring a full-stack approach to Data & AI engineering. Whether it's improving model accuracy, reducing processing time, or enabling executive-level insights, I focus on building systems that are not only technically robust but strategically impactful.
-
-        </p>
-        <p>
-          Passionate about applying AI ethically and efficiently to create meaningful impact at scale.
-        </p>
-      </div>
-    </div>
-    <button class="scroll-down" onclick="scrollToSection('skills')">↓</button>
-  </section>
-
-  <!-- ===== SKILLS SECTION ===== -->
-  <section id="skills" class="section">
-    <div class="inner">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <span>Python</span><span>PySpark</span><span>SQL</span><span>Databricks</span><span>LangChain</span>
-        <span>Power BI</span><span>Azure</span><span>Machine Learning</span><span>Generative AI</span><span>RAG Pipeline</span>
-      </div>
-    </div>
-    <button class="scroll-down" onclick="scrollToSection('projects')">↓</button>
-  </section>
-
-  <!-- ===== PROJECTS SECTION ===== -->
-  <section id="projects" class="section">
-    <div class="inner">
-      <h2>Projects</h2>
-      <div class="grid proj-grid">
-
-        <!-- Modern Projects -->
-        <div class="card proj">
-          <h3><i class="fa-solid fa-robot"></i> Generative AI Copilot</h3>
-          <p>Integrated ML endpoints to automate prompt-based workflows for Microsoft Factory US at Confiz,
-          improving campaign insights and personalization.</p>
-          <div class="tags"><span>Azure</span><span>LangChain</span><span>Python</span></div>
-        </div>
-
-        <div class="card proj">
-          <h3><i class="fa-solid fa-database"></i> Data Enrichment Utility</h3>
-          <p>Built an end-to-end pipeline enriching cookie &amp; geo data with U.S. Census datasets to enhance
-          audience targeting and segmentation quality.</p>
-          <div class="tags"><span>Databricks</span><span>PySpark</span><span>SQL</span></div>
-        </div>
-
-        <div class="card proj">
-          <h3><i class="fa-solid fa-chart-line"></i> ML-Powered Audience Insights</h3>
-          <p>Developed predictive models to analyze engagement trends and optimize user cohorts for marketing analytics teams.</p>
-          <div class="tags"><span>XGBoost</span><span>sklearn</span><span>Power BI</span></div>
-        </div>
-
-        <!-- Research Projects -->
-        <div class="card proj">
-          <h3><i class="fa-solid fa-flask"></i> Predictive Failure Modeling for Hydrogen Powertrain Components</h3>
-          <p>Built predictive model in Python using scikit-learn to assess failure risks and simulate cloud deployment with PySpark &amp; Azure.</p>
-          <div class="tags"><span>Python</span><span>scikit-learn</span><span>PySpark</span><span>Azure</span></div>
-        </div>
-
-        <div class="card proj">
-          <h3><i class="fa-solid fa-gears"></i> Optimization and Analysis of Seamless Rocket Motor Tubes</h3>
-          <p>Designed simulation model using ANSYS &amp; MATLAB improving structural performance by 15% and achieving 10% weight reduction.</p>
-          <div class="tags"><span>ANSYS</span><span>MATLAB</span><span>FEA</span><span>Simulation</span></div>
-        </div>
-
-        <div class="card proj">
-          <h3><i class="fa-solid fa-rocket"></i> Modeling and Analysis of Milan 2T Missile Fin</h3>
-          <p>Developed 3D CAD models using CATIA &amp; ANSYS, enhancing flight stability and reducing design iterations by 15%.</p>
-          <div class="tags"><span>CATIA</span><span>ANSYS</span><span>MATLAB</span><span>FEA</span></div>
+      <div class="reveal">
+        <div class="cert-grid">
+          <p class="cert-label">Certifications</p>
+          <div class="cert-card">
+            <span class="cert-emoji">🏅</span>
+            <div class="cert-info"><div class="cert-name">Generative AI Engineer – Associate</div><div class="cert-issuer">Databricks</div></div>
+            <span class="cert-pill">Databricks</span>
+          </div>
+          <div class="cert-card">
+            <span class="cert-emoji">🏅</span>
+            <div class="cert-info"><div class="cert-name">OCI Generative AI Professional</div><div class="cert-issuer">Oracle Cloud Infrastructure 2025</div></div>
+            <span class="cert-pill">Oracle</span>
+          </div>
+          <div class="cert-card">
+            <span class="cert-emoji">🏅</span>
+            <div class="cert-info"><div class="cert-name">OCI AI Foundations Associate</div><div class="cert-issuer">Oracle Cloud Infrastructure 2025</div></div>
+            <span class="cert-pill">Oracle</span>
+          </div>
         </div>
       </div>
     </div>
-    <button class="scroll-down" onclick="scrollToSection('journey')">↓</button>
-  </section>
+  </div>
+</section>
 
- <section id="journey" class="section journey-path">
-  <div class="inner">
-    <h2>My Journey</h2>
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="s-inner">
+    <p class="sec-tag reveal" style="color:var(--c3)">Toolkit</p>
+    <h2 class="sec-title reveal">Technical <em>Skills</em></h2>
+    <div class="skill-cats">
+      <div class="reveal"><p class="sg-title">ML Engineering &amp; MLOps</p><div class="chips">
+        <span class="chip c1">TensorFlow</span><span class="chip c1">PyTorch</span><span class="chip c1">scikit-learn</span><span class="chip c1">MLflow</span><span class="chip c1">Distributed Training</span><span class="chip c1">Model Monitoring</span><span class="chip c1">A/B Testing</span><span class="chip c1">ONNX</span><span class="chip c1">CUDA</span>
+      </div></div>
+      <div class="reveal"><p class="sg-title">Languages &amp; Frameworks</p><div class="chips">
+        <span class="chip c2">Python</span><span class="chip c2">SQL</span><span class="chip c2">Java</span><span class="chip c2">PySpark</span><span class="chip c2">NumPy</span><span class="chip c2">Pandas</span><span class="chip c2">JAX</span><span class="chip c2">FastAPI</span>
+      </div></div>
+      <div class="reveal"><p class="sg-title">Generative AI &amp; Specialized ML</p><div class="chips">
+        <span class="chip c5">LangChain</span><span class="chip c5">RAG Pipelines</span><span class="chip c5">OpenAI API</span><span class="chip c5">Hugging Face</span><span class="chip c5">NLP</span><span class="chip c5">Computer Vision</span><span class="chip c5">Transfer Learning</span><span class="chip c5">MCP</span>
+      </div></div>
+      <div class="reveal"><p class="sg-title">Cloud &amp; Infrastructure</p><div class="chips">
+        <span class="chip c4">AWS SageMaker</span><span class="chip c4">Google Vertex AI</span><span class="chip c4">Kubernetes</span><span class="chip c4">Docker</span><span class="chip c4">Jenkins</span><span class="chip c4">Apache Airflow</span><span class="chip c4">Kafka</span>
+      </div></div>
+      <div class="reveal"><p class="sg-title">Data Engineering</p><div class="chips">
+        <span class="chip c3">Databricks</span><span class="chip c3">Snowflake</span><span class="chip c3">ETL/ELT Pipelines</span><span class="chip c3">FAISS</span><span class="chip c3">Pinecone</span><span class="chip c3">Redshift</span><span class="chip c3">Delta Lake</span>
+      </div></div>
+    </div>
+  </div>
+</section>
 
-    <div class="path-container">
-
-      <!-- Flight Path -->
-      <svg class="flight-path" viewBox="0 0 1200 600">
-        <path id="path"
-          d="
-          M150 420
-          C 350 300, 450 300, 600 160
-          C 750 60, 950 160, 1080 260
-          C 1150 320, 950 420, 700 480
-          C 500 520, 300 480, 200 390
-          "
-          stroke="#00eaff"
-          stroke-width="4"
-          stroke-dasharray="12 12"
-          fill="none"
-          stroke-linecap="round"
-        />
-      </svg>
-
-      <!-- Plane following the path -->
-      <img src="assets/images/plane.png" class="plane-icon" />
-
-      <!-- Bubbles -->
-      <div class="bubble bubble1">
-        <h3>2015 – 2019</h3>
-        <p>Bachelor’s in Mechanical Engineering – JNTU Hyderabad</p>
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="s-inner">
+    <p class="sec-tag reveal" style="color:var(--c4)">Career</p>
+    <h2 class="sec-title reveal">Work <em>Experience</em></h2>
+    <div>
+      <div class="exp-item reveal">
+        <div class="exp-left">
+          <div class="exp-dot"></div>
+          <div class="exp-date">Jan 2024 – Present</div>
+          <div class="exp-city">Houston, TX</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Machine Learning Analyst</div>
+          <div class="exp-org">SPR Software Systems &amp; Implementation → Confiz (End Client: Microsoft Factory US)</div>
+          <ul class="exp-bullets">
+            <li>Built and deployed <strong>production-grade neural networks</strong> with TensorFlow using distributed training, cutting model training time by <strong>40%</strong> on large-scale datasets.</li>
+            <li>Automated the ML lifecycle with <strong>CI/CD pipelines</strong> using MLflow and Jenkins — enabling seamless model versioning and rapid deployment.</li>
+            <li>Designed automated <strong>drift detection systems</strong> with AWS CloudWatch and SageMaker Model Monitor, reducing manual auditing time by <strong>30%</strong>.</li>
+            <li>Reduced model deployment latency by <strong>60%</strong> by implementing a standardized MLOps framework with MLflow and Kubernetes.</li>
+            <li>Integrated <strong>Model Context Protocol (MCP)</strong> to enhance tool-use capabilities in AI agents and internal workflows.</li>
+            <li>Applied <strong>Responsible AI (RAI)</strong> frameworks to monitor bias and drift, keeping models compliant with financial industry regulations.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="etag">TensorFlow</span><span class="etag">MLflow</span><span class="etag">Kubernetes</span><span class="etag">AWS SageMaker</span><span class="etag">Jenkins</span><span class="etag">CUDA</span><span class="etag">RAI</span>
+          </div>
+        </div>
       </div>
 
-      <div class="bubble bubble2">
-        <h3>2019 – 2022</h3>
-        <p>Software Engineer – Krithi Cubersoft & Others</p>
+      <div class="exp-item reveal">
+        <div class="exp-left">
+          <div class="exp-dot"></div>
+          <div class="exp-date">Jun 2020 – Jul 2022</div>
+          <div class="exp-city">Hyderabad, India</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Data Scientist</div>
+          <div class="exp-org">Krithi Cybersoft Pvt. Ltd.</div>
+          <ul class="exp-bullets">
+            <li>Engineered <strong>ETL/ELT pipelines</strong> with PySpark and Databricks to process multi-terabyte datasets for large-scale predictive modeling.</li>
+            <li>Fine-tuned <strong>Computer Vision and NLP models</strong> with PyTorch and Hugging Face Transformers, automating complex data extraction workflows.</li>
+            <li>Improved F1-score from <strong>0.82 → 0.94</strong> on a fraud detection system via advanced feature engineering and hyperparameter optimization with Ray Tune.</li>
+            <li>Built a <strong>RAG pipeline</strong> with real-time market data from Vector Databases, boosting risk model prediction accuracy by <strong>15%</strong>.</li>
+            <li>Delivered end-to-end data solutions from <strong>Snowflake/Redshift</strong> storage to API delivery, ensuring high data quality and reliability.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="etag">PyTorch</span><span class="etag">PySpark</span><span class="etag">Databricks</span><span class="etag">RAG</span><span class="etag">Snowflake</span><span class="etag">Ray Tune</span><span class="etag">Hugging Face</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="s-inner">
+    <p class="sec-tag reveal" style="color:var(--c5)">Portfolio</p>
+    <h2 class="sec-title reveal">Featured <em>Projects</em></h2>
+    <div class="proj-grid">
+
+      <div class="proj-card reveal" data-tilt>
+        <div class="proj-glow" style="background:radial-gradient(circle,var(--c4),transparent)"></div>
+        <div class="proj-num">01</div>
+        <div class="proj-icon" style="background:rgba(77,150,255,0.15)">🤖</div>
+        <div class="proj-title">MLOps Drift Detection Platform</div>
+        <p class="proj-desc">Designed and deployed an automated model monitoring platform using AWS CloudWatch and SageMaker Model Monitor. Integrated Responsible AI checks for bias detection, reducing manual auditing by 30% while keeping production models compliant with financial regulations.</p>
+        <div class="proj-tags">
+          <span class="ptag" style="background:rgba(77,150,255,0.12);color:var(--c4);border:1px solid rgba(77,150,255,0.25)">AWS SageMaker</span>
+          <span class="ptag" style="background:rgba(77,150,255,0.12);color:var(--c4);border:1px solid rgba(77,150,255,0.25)">MLflow</span>
+          <span class="ptag" style="background:rgba(77,150,255,0.12);color:var(--c4);border:1px solid rgba(77,150,255,0.25)">CloudWatch</span>
+          <span class="ptag" style="background:rgba(77,150,255,0.12);color:var(--c4);border:1px solid rgba(77,150,255,0.25)">Python</span>
+        </div>
       </div>
 
-      <div class="bubble bubble3">
-        <h3>2023 – 2025</h3>
-        <p>Master’s in Information Science & Systems – Trine University (USA)</p>
+      <div class="proj-card reveal" data-tilt>
+        <div class="proj-glow" style="background:radial-gradient(circle,var(--c5),transparent)"></div>
+        <div class="proj-num">02</div>
+        <div class="proj-icon" style="background:rgba(199,125,255,0.15)">🧠</div>
+        <div class="proj-title">RAG-Powered Risk Assessment Engine</div>
+        <p class="proj-desc">Built an end-to-end Retrieval-Augmented Generation pipeline ingesting real-time market data into FAISS/Pinecone vector stores. Improved risk model prediction accuracy by 15% and automated document Q&amp;A workflows for financial analysts.</p>
+        <div class="proj-tags">
+          <span class="ptag" style="background:rgba(199,125,255,0.12);color:var(--c5);border:1px solid rgba(199,125,255,0.25)">LangChain</span>
+          <span class="ptag" style="background:rgba(199,125,255,0.12);color:var(--c5);border:1px solid rgba(199,125,255,0.25)">FAISS</span>
+          <span class="ptag" style="background:rgba(199,125,255,0.12);color:var(--c5);border:1px solid rgba(199,125,255,0.25)">OpenAI API</span>
+          <span class="ptag" style="background:rgba(199,125,255,0.12);color:var(--c5);border:1px solid rgba(199,125,255,0.25)">FastAPI</span>
+        </div>
       </div>
 
-      <div class="bubble bubble4">
-        <h3>2025 – Present</h3>
-        <p>Data & AI Engineer – Confiz (Microsoft Factory US)</p>
+      <div class="proj-card reveal" data-tilt>
+        <div class="proj-glow" style="background:radial-gradient(circle,var(--c3),transparent)"></div>
+        <div class="proj-num">03</div>
+        <div class="proj-icon" style="background:rgba(107,203,119,0.15)">🔍</div>
+        <div class="proj-title">Fraud Detection with Deep Feature Engineering</div>
+        <p class="proj-desc">Re-engineered a fraud detection system with PyTorch and Hugging Face NLP + Ray Tune hyperparameter optimization. Boosted F1-score from 0.82 → 0.94 — deployed on Databricks processing multi-terabyte financial transaction data in production.</p>
+        <div class="proj-tags">
+          <span class="ptag" style="background:rgba(107,203,119,0.12);color:var(--c3);border:1px solid rgba(107,203,119,0.25)">PyTorch</span>
+          <span class="ptag" style="background:rgba(107,203,119,0.12);color:var(--c3);border:1px solid rgba(107,203,119,0.25)">Databricks</span>
+          <span class="ptag" style="background:rgba(107,203,119,0.12);color:var(--c3);border:1px solid rgba(107,203,119,0.25)">Ray Tune</span>
+          <span class="ptag" style="background:rgba(107,203,119,0.12);color:var(--c3);border:1px solid rgba(107,203,119,0.25)">PySpark</span>
+        </div>
       </div>
 
     </div>
   </div>
-
-  <button class="scroll-down" onclick="scrollToSection('contact')">↓</button>
 </section>
 
-  <!-- ===== CONTACT SECTION ===== -->
-  <section id="contact" class="section">
-    <div class="inner contact">
-      <h2>Contact</h2>
-      <p>📧 lokeshreddy0814@gmail.com     📍 Texas, USA</p>
-      <p class="footer">Crafted with precision by Lokesh Reddy Thipparthi</p>
+<!-- JOURNEY -->
+<section id="journey" class="section">
+  <div class="s-inner">
+    <p class="sec-tag reveal" style="color:var(--c2)">Timeline</p>
+    <h2 class="sec-title reveal">My <em>Journey</em></h2>
+    <div class="j-grid">
+      <div class="j-card reveal">
+        <div class="j-bar" style="background:linear-gradient(90deg,var(--c3),transparent)"></div>
+        <div class="j-year" style="color:var(--c3)">2015 – 2019</div>
+        <div class="j-role">Bachelor of Engineering</div>
+        <div class="j-place">Mechanical Engineering · JNTU Hyderabad, India</div>
+        <p class="j-desc">Built strong engineering fundamentals in simulation, FEA, and structural analysis. Developed early interest in data-driven problem solving through aerospace research.</p>
+      </div>
+      <div class="j-card reveal">
+        <div class="j-bar" style="background:linear-gradient(90deg,var(--c2),transparent)"></div>
+        <div class="j-year" style="color:var(--c2)">Jun 2020 – Jul 2022</div>
+        <div class="j-role">Data Scientist</div>
+        <div class="j-place">Krithi Cybersoft Pvt. Ltd. · Hyderabad, India</div>
+        <p class="j-desc">Launched career in data science — building ETL pipelines, fine-tuning NLP and CV models, and delivering fraud detection and risk assessment systems on production-grade data.</p>
+      </div>
+      <div class="j-card reveal">
+        <div class="j-bar" style="background:linear-gradient(90deg,var(--c4),transparent)"></div>
+        <div class="j-year" style="color:var(--c4)">2022 – 2024</div>
+        <div class="j-role">Master of Science</div>
+        <div class="j-place">Information Sciences &amp; Systems · Trine University, Indiana</div>
+        <p class="j-desc">Deepened expertise in machine learning, cloud platforms, and AI systems. Earned Databricks and Oracle Cloud certifications. Gained US industry exposure through applied projects.</p>
+      </div>
+      <div class="j-card reveal">
+        <div class="j-bar" style="background:linear-gradient(90deg,var(--c5),transparent)"></div>
+        <div class="j-year" style="color:var(--c5)">Jan 2024 – Present</div>
+        <div class="j-role">Machine Learning Analyst</div>
+        <div class="j-place">SPR → Confiz · Microsoft Factory US, Houston TX</div>
+        <p class="j-desc">Architecting production ML infrastructure, deploying MLOps frameworks cutting latency by 60%, and integrating Model Context Protocol into enterprise AI agent workflows.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <script src="assets/js/script.js"></script>
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="s-inner">
+    <div class="contact-inner reveal">
+      <h2 class="contact-h">Let's <span class="grad">Work Together</span></h2>
+      <p class="contact-sub">Open to AI/ML Engineer, Data Scientist, and MLOps roles in the DFW area and beyond.<br>Always happy to talk about data, AI, and what we can build together.</p>
+      <div class="clinks">
+        <a href="mailto:Thipparthilokeshreddy2@gmail.com" class="clink em">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email Me
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="clink li">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com" target="_blank" class="clink gh">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="#" onclick="return false;" class="clink rs">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Lokesh Reddy Thipparthi &nbsp;·&nbsp; Frisco, Texas &nbsp;·&nbsp; Built with passion ✦</p>
+</footer>
+
+<script>
+// ===== PARTICLES =====
+(function(){
+  const canvas=document.getElementById('particles');
+  const ctx=canvas.getContext('2d');
+  let W,H;
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+  window.addEventListener('resize',resize);resize();
+  const COLORS=['#ff6b6b','#ffd93d','#6bcb77','#4d96ff','#c77dff'];
+  const stars=Array.from({length:110},()=>({
+    x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,
+    r:Math.random()*1.6+0.3,
+    color:COLORS[Math.floor(Math.random()*COLORS.length)],
+    vx:(Math.random()-0.5)*0.18,vy:(Math.random()-0.5)*0.12,
+    a:Math.random()*0.5+0.2,ts:Math.random()*0.03+0.005,to:Math.random()*Math.PI*2
+  }));
+  let t=0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);t+=0.016;
+    stars.forEach(s=>{
+      s.x+=s.vx;s.y+=s.vy;
+      if(s.x<0)s.x=W;if(s.x>W)s.x=0;
+      if(s.y<0)s.y=H;if(s.y>H)s.y=0;
+      ctx.globalAlpha=s.a*(0.4+0.6*Math.abs(Math.sin(t*s.ts*60+s.to)));
+      ctx.fillStyle=s.color;
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();
+    });
+    ctx.globalAlpha=1;
+    for(let i=0;i<stars.length;i++){
+      for(let j=i+1;j<stars.length;j++){
+        const a=stars[i],b=stars[j];
+        const d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<110){
+          ctx.strokeStyle=`rgba(255,255,255,${0.035*(1-d/110)})`;
+          ctx.lineWidth=0.4;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ===== TYPEWRITER =====
+(function(){
+  const roles=['AI/ML Engineer','Data Scientist','MLOps Specialist','Generative AI Builder','Deep Learning Engineer'];
+  let ri=0,ci=0,del=false;
+  const el=document.getElementById('tw');
+  function type(){
+    const w=roles[ri];
+    if(!del){el.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,1800);return;}}
+    else{el.textContent=w.slice(0,--ci);if(ci===0){del=false;ri=(ri+1)%roles.length;}}
+    setTimeout(type,del?55:95);
+  }
+  setTimeout(type,700);
+})();
+
+// ===== SCROLL REVEAL =====
+(function(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*70);obs.unobserve(e.target);}
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+})();
+
+// ===== 3D TILT =====
+document.querySelectorAll('[data-tilt]').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-0.5,y=(e.clientY-r.top)/r.height-0.5;
+    card.style.transform=`perspective(700px) rotateY(${x*14}deg) rotateX(${-y*14}deg) translateZ(12px)`;
+    const g=card.querySelector('.proj-glow');
+    if(g){g.style.left=(e.clientX-r.left-100)+'px';g.style.top=(e.clientY-r.top-100)+'px';}
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='perspective(700px) rotateY(0) rotateX(0) translateZ(0)';
+  });
+});
+
+// ===== PARALLAX =====
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  document.querySelector('.mesh').style.transform=`translateY(${sy*0.25}px)`;
+  const h=document.querySelector('#hero .hero-inner');
+  if(h)h.style.transform=`translateY(${sy*0.15}px)`;
+});
+
+// ===== NAV SHRINK =====
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainnav').style.padding=window.scrollY>60?'0.75rem 5%':'1.2rem 5%';
+});
+
+// ===== SMOOTH SCROLL (fix all internal links) =====
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const href=a.getAttribute('href');
+    if(!href||href==='#'||href.startsWith('#!')){ e.preventDefault(); return; }
+    const target=document.querySelector(href);
+    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
 </body>
 </html>
+
