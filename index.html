@@ -199,9 +199,9 @@
 
     /* ANIMATIONS */
     @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-    .reveal{opacity:0;transform:translateY(25px);transition:opacity 0.6s ease,transform 0.6s ease}
-    .reveal.in{opacity:1;transform:translateY(0)}
-    .no-js .reveal{opacity:1;transform:none}
+    .reveal{opacity:1;transform:translateY(0);transition:opacity 0.6s ease,transform 0.6s ease}
+    .reveal.animate{opacity:0;transform:translateY(25px)}
+    .reveal.animate.in{opacity:1;transform:translateY(0)}
 
     /* RESPONSIVE */
     @media(max-width:900px){
@@ -559,26 +559,40 @@
 (function(){
   const items = document.querySelectorAll('.reveal');
   
-  // Hard fallback — if anything isn't visible after 1.5s, force show it
-  setTimeout(() => {
-    items.forEach(el => el.classList.add('in'));
-  }, 1500);
+  // Add animate class after page loads so content is visible first
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      items.forEach(el => {
+        if(!isInViewport(el)){
+          el.classList.add('animate');
+        }
+      });
+      startObserver();
+    }, 100);
+  });
 
-  if(!('IntersectionObserver' in window)){
-    items.forEach(el => el.classList.add('in'));
-    return;
+  function isInViewport(el){
+    const r = el.getBoundingClientRect();
+    return r.top < window.innerHeight && r.bottom > 0;
   }
 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if(e.isIntersecting){
-        setTimeout(() => e.target.classList.add('in'), i * 60);
-        obs.unobserve(e.target);
-      }
+  function startObserver(){
+    if(!('IntersectionObserver' in window)){
+      items.forEach(el => el.classList.add('in'));
+      return;
+    }
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if(e.isIntersecting){
+          setTimeout(() => e.target.classList.add('in'), i * 60);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.01, rootMargin: '0px 0px -10px 0px' });
+    items.forEach(el => {
+      if(el.classList.contains('animate')) obs.observe(el);
     });
-  }, { threshold: 0.01, rootMargin: '0px 0px -20px 0px' });
-
-  items.forEach(el => obs.observe(el));
+  }
 })();
 
 // ===== 3D TILT =====
